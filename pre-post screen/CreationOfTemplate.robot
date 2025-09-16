@@ -35,9 +35,9 @@ ${users_Empty}                  No User data available for the selected data typ
 @{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-    #   Set Library Search Order    QForce                      QWeb
-    #  Open Browser                about:blank                 chrome
-  
+    #                           Set Library Search Order    QForce                      QWeb
+    #                           Open Browser                about:blank                 chrome
+
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
     [Tags]                      RefreshFlow
@@ -55,7 +55,7 @@ Select And Authenticate Refresh Environment
     ClickText                   Next
     Selection of Org Retreival
 
-    
+
 Metadata Retreival
 
     FOR                         ${Metadata_Type}            IN                          @{Metadata_Types}
@@ -285,10 +285,10 @@ Editing the Users
     ClickItem                   Refresh
     Verifytext                  Custom Settings - Backup Regeneration Backup Completed
     Clicktext                   Next                        anchor=Edit Template
-    ClickElement              xpath=//select[@value="5"]                              anchor=Showing
+    ClickElement                xpath=//select[@value="5"]                              anchor=Showing
     # ClickText                 25                          anchor=10
-    HotKey                                            down 
-    # ClickText                        10
+    HotKey                      down
+    # ClickText                 10
 SearchBar for ApexClass
     ClickElement                xpath=(//input[@type="search"])[2]
     WriteText                   alasree
@@ -352,33 +352,58 @@ MetadataRestore SCREEN
     ClickText                   Next                        anchor=Start Refresh
     ClickElement                xpath=//span[@title="Metadata"]
     ClickElement                xpath=//span[@title="Logs Information"]
-    Scroll                      //html                      down             100
+    Scroll                      //html                      down                        100
     ClickText                   Execute                     anchor=Back
     VerifyText                  Deployment initiated successfully!
-    sleep                      15s
+    sleep                       15s
     ClickItem                   Status
     sleep                       15s
     ClickItem                   Status
     VerifyText                  Deployment completed successfully.
     ClickElement                xpath=//span[@title="Metadata"]
-    Scroll                      //html                      down             100
-    Scroll                      //html                      down             100
-    Scroll                      //html                      down             100
+    Scroll                      //html                      down                        100
+    Scroll                      //html                      down                        100
+    Scroll                      //html                      down                        100
     ClickElement                xpath=//span[@title="Logs Information"]
     VerifyText                  LN-00
     VerifyText                  2025
     ClickText                   Next                        anchor=Execute
-Metadata Transformation Screen
-    # Scroll                      //html                      up             100
-    # Scroll                      //html                      up             100
-    # Scroll                      //html                      up             100
-    Scroll                      //html                      down             500
-    # VerifyText            ${ENV}
-    ClickElement          xpath=//span[@title="Search and Replace Rules"]
-    ClickElement          xpath=(//span[contains(@class, 'slds-file-selector__button')])[1]
-    # UploadFile   Upload Files     .xlsx
-    ${uploadforSearchrules}   Set Variable                C:\Users\alasree.b\Downloads\search13.csv
-    UploadFile                Upload Files          ${uploadforSearchrules}      
+# Metadata Transformation Screen
+#     # Scroll                    //html                      up                          100
+#     # Scroll                    //html                      up                          100
+#     # Scroll                    //html                      up                          100
+#     Scroll                      //html                      down                        500
+#     # VerifyText                ${ENV}
+#     ClickElement                xpath=//span[@title="Search and Replace Rules"]
+#     ClickElement                xpath=(//span[contains(@class, 'slds-file-selector__button')])[1]
+#     # UploadFile                Upload Files                .xlsx
+#     # ${uploadforSearchrules}                               Set Variable                C:\Users\alasree.b\Downloads\search13.csv
+#     # UploadFile                Upload Files                ${uploadforSearchrules}
+#     #                           ${relative_path}            Set Variable                Test/../Data/PO.pdf
+#     ${uploadforSearchrules}     Set Variable                ${CURDIR}/Resources/../main/search13.csv
+
+    pre-post screen
+#     UploadFile                  Upload Files                ${uploadforSearchrules}
+
+#  # Verify file exists first
+#     # ${file_path}=               Normalize Path              ${CURDIR}/Resources/main/search13.csv
+#     ${file_path}=               Normalize Path              ${CURDIR}/main/Resources/search13.csv
+#     File Should Exist              ${file_path}
+#     ${uploadforSearchrules}=       Set Variable        ${file_path}
+#     UploadFile                     Upload Files        ${uploadforSearchrules}
+#         # Set QWeb base path and use relative path
+#         Set Variable                    $image_path         ${CURDIR}
+#         ${uploadforSearchrules}=        Set Variable        search13.csv
+#         File Should Exist              ${CURDIR}${/}${uploadforSearchrules}
+#         UploadFile                      Upload Files        ${uploadforSearchrules}
+
+
+#         # https://github.com/alasree/Copado-Robotic-Testing_2025-/blob/main/Resources/search13.csv
+
+# DataRestore Screen
+#     ClickElement        xpath=//span[@title="Users Information"]
+#     ClickElement    xpath=(//input[@data-navigation="enable"])[3]
+
 
 
 
