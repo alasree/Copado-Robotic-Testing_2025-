@@ -33,6 +33,7 @@ ${users_Empty}                  No User data available for the selected data typ
 @{Users_Selection}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
 @{Custom_settings}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
 @{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+${xpath_of_iploadfile}      xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
     #                           Set Library Search Order    QForce                      QWeb
@@ -389,8 +390,10 @@ MetadataRestore SCREEN
     # ${file_path}=               Normalize Path              ${CURDIR}/Resources/main/search13.csv
     # ${file_path}=               Normalize Path              ${CURDIR}/main/Resources/search13.csv
     # File Should Exist              ${file_path}
-    ${uploadforSearchrules}=       Set Variable       ${CURDIR}/Resources/search13.csv
-    UploadFile                     Upload Files        ${uploadforSearchrules}
+    # ${xpath_of_iploadfile}      xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
+
+    # ${uploadforSearchrules}=       Set Variable       ${CURDIR}/Resources/search13.csv
+    # UploadFile                     ${xpath_of_iploadfile}         ${CURDIR}/Resources/search13.csv
 #         # Set QWeb base path and use relative path
 #         Set Variable                    $image_path         ${CURDIR}
 #         ${uploadforSearchrules}=        Set Variable        search13.csv
@@ -400,9 +403,42 @@ MetadataRestore SCREEN
 
 #         # https://github.com/alasree/Copado-Robotic-Testing_2025-/blob/main/Resources/search13.csv
 
-# DataRestore Screen
-#     ClickElement        xpath=//span[@title="Users Information"]
-#     ClickElement    xpath=(//input[@data-navigation="enable"])[3]
+DataRestore Screen
+    ClickElement        xpath=//span[@title="Users Information"]
+    ClickElement    xpath=(//input[@data-navigation="enable"])[3]
+    VerifyText      Selected Users
+    Scroll                      //html                      down                        100        
+    VerifyText      Total Records: 1
+Custom Settings
+    ClickElement        xpath=//span[@title="Custom Settings Information"]
+    ClickElement        xpath=(//input[@type="search"])[2]
+    WriteText           Org
+    ClickText           Clear
+    ClickElement        xpath=(//select[@class="slds-select"])[3]
+Scheduled Jobs
+    ClickElement    xpath=//span[@title="Schedule Jobs Information"]
+    Scroll                      //html                      up                        500 
+    ClickElement                xpath=(//input[@type="search"])[3]
+    WriteText                   ala
+    VerifyText                  No schedule jobs found matching your search criteria.
+DeleteScheduledJobs
+    clickElement    xpath=//span[@title="Delete Schedule Jobs Information"]
+    VerifyText      
+    HoverItem       Setup
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
