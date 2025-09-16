@@ -1,6 +1,6 @@
 ***Settings***
-Resource                   ../Resource/Variables.robot
-Resource                   ../Resource/Common.robot
+Resource                   ../Resources/Variables.robot
+Resource                   ../Resources/Common.robot
 # Library                    DataDriver                  reader_class=TestDataApi    name=Account Creation.xlsx
 Library                    QForce
 Library                    DateTime
