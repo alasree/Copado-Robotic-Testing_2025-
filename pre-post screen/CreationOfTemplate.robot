@@ -385,12 +385,12 @@ MetadataRestore SCREEN
     pre-post screen
 #     UploadFile                  Upload Files                ${uploadforSearchrules}
 
-#  # Verify file exists first
-#     # ${file_path}=               Normalize Path              ${CURDIR}/Resources/main/search13.csv
-#     ${file_path}=               Normalize Path              ${CURDIR}/main/Resources/search13.csv
-#     File Should Exist              ${file_path}
-#     ${uploadforSearchrules}=       Set Variable        ${file_path}
-#     UploadFile                     Upload Files        ${uploadforSearchrules}
+ # Verify file exists first
+    # ${file_path}=               Normalize Path              ${CURDIR}/Resources/main/search13.csv
+    # ${file_path}=               Normalize Path              ${CURDIR}/main/Resources/search13.csv
+    # File Should Exist              ${file_path}
+    ${uploadforSearchrules}=       Set Variable       ${CURDIR}/Resources/search13.csv
+    UploadFile                     Upload Files        ${uploadforSearchrules}
 #         # Set QWeb base path and use relative path
 #         Set Variable                    $image_path         ${CURDIR}
 #         ${uploadforSearchrules}=        Set Variable        search13.csv
