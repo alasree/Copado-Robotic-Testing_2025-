@@ -3,9 +3,9 @@ Library                         QWeb
 # Sanbox Refresh Regression Suite
 # Developed by: CloudFulcrum India Pvt. Ltd.
 # Description: Automates the Create template on Sandbox Refresh
-Resource                        ../Resource/Common.robot
-Resource                        ../Resource/Keywords.robot
-Resource                        ../Resource/Variables.robot
+Resource                        ../Resources/Common.robot
+Resource                        ../Resources/Keywords.robot
+Resource                        ../Resources/Variables.robot
 Suite Setup                     Setup Browser
 Suite Teardown                  End suite
 Library                         DateTime
