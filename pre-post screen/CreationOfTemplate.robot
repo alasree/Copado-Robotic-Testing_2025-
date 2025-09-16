@@ -35,8 +35,8 @@ ${users_Empty}                  No User data available for the selected data typ
 @{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-     Set Library Search Order    QForce                      QWeb
-     Open Browser                about:blank                 chrome
+    #  Set Library Search Order    QForce                      QWeb
+    #  Open Browser                about:blank                 chrome
   
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
