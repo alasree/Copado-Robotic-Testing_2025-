@@ -36,8 +36,8 @@ ${users_Empty}                  No User data available for the selected data typ
 ${xpath_of_iploadfile}      xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-    #                           Set Library Search Order    QForce                      QWeb
-    #                           Open Browser                about:blank                 chrome
+                            #   Set Library Search Order    QForce                      QWeb
+                            #   Open Browser                about:blank                 chrome
 
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
@@ -423,8 +423,58 @@ Scheduled Jobs
     VerifyText                  No schedule jobs found matching your search criteria.
 DeleteScheduledJobs
     clickElement    xpath=//span[@title="Delete Schedule Jobs Information"]
-    VerifyText      
-    HoverItem       Setup
+    VerifyText      Do you want to delete the Scheduled Jobs, Report Run, and Report Notifications that were copied from the source organization to the target after the sandbox refresh? If yes, click the Execute button and select the 'Delete Scheduled Jobs' checkbox.
+    ClickText       Logs Information
+    ClickText       Execute
+    VerifyText      Select Items to Execute
+    VerifyText      Users (Select at least one user using 'Cherry Pick' to enable this option.)
+    ClickText       Cancel
+    ClickText       Users Information
+    ClickElement    xpath=//span[text()='Select Item 2']/ancestor::td
+    ClickText       Execute
+    # ClickText       Users
+    ClickElement    xpath=//span[normalize-space(text())='Users']
+    ClickElement    xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
+# <span part="label" lwc-16hle61jt7i="" class="slds-form-element__label">Delete Schedule Jobs</span>
+    ClickElement   xpath=//span[normalize-space(text())='Delete Schedule Jobs']
+    ClickElement   xpath=//span[normalize-space(text())='Schedule Jobs']
+    ClickText      Execute
+    VerifyText     Execution started. Please wait. Refresh icon will appear after logs are generated.
+    VerifyText     Logs are being generated. Please stay on this page—refresh icon will appear soon.
+    RefreshPage
+    ClickText      Next    anchor=Edit Template
+    ClickText      Next    anchor=Start refresh
+    ClickText      Next    anchor=Execute
+    ClickText      Next    anchor=Execute
+    ClickText      Status
+    GetText     Custom Settings Restoration
+    GetText     User Restoration
+     ClickText      Status
+     VerifyText     Custom Settings Restoration
+     ClickText      Logs Information
+     VerifyText     Users
+     VerifyText     LN-00
+     GetText     Custom Settings
+     VerifyText     An Email is triggered on the execution of Schedule jobs and Deleted Scheduled jobs with respective status.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 
 
