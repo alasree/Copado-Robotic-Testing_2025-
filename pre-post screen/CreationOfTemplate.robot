@@ -457,8 +457,13 @@ DeleteScheduledJobs
      GetText     Custom Settings
      VerifyText     An Email is triggered on the execution of Schedule jobs and Deleted Scheduled jobs with respective status.
      ClickText      Next    anchor=Execute
-     VerifyText     Data Tranformation
-     ClickElement    xpath=//button[@name="selectObjectList"]       
+     VerifyText     Data Transformation
+     ClickElement    xpath=//button[@name="selectObjectList"]  
+      Scroll                      //html                      down                        100       
+      Scroll                      //html                      down                        500 
+      HotKey                      down
+      VerifyText                   Contact
+
 
 
 
