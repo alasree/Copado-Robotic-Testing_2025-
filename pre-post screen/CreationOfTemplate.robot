@@ -462,6 +462,7 @@ DeleteScheduledJobs
       Scroll                      //html                      down                        100       
       Scroll                      //html                      down                        500 
       HotKey                      down
+      PressUntil                  Case       down 
       VerifyText                   Contact
 
 
