@@ -462,73 +462,68 @@ DeleteScheduledJobs
       Scroll                      //html                      down                        100       
       Scroll                      //html                      down                        500 
       HotKey                      down
-      PressUntil                  Case       down 
-      VerifyText                   Contact
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      PressUntil                  Case                         pagedown
+      VerifyText                   Contact                   
+    #   Handle Dropdown Scrolling
+    # # First dropdown - Users
+    # ClickElement    xpath=//button[@name="selectObjectList"] 
+    # # ClickText                   Users
+    # # Sleep                       1s    # Allow dropdown to fully load
     
+    # # Try direct selection first, then scroll if needed
+    # ${item_found}=              Run Keyword And Return Status    VerifyText    case    timeout=2s
+    # IF    not ${item_found}
+    #     # Scroll within dropdown or use arrow keys
+    #     HotKey                  down
+    #     HotKey                  down
+    #     HotKey                  down
+    #     # Or use: Scroll        //html    down    300
+    # END
+    # ClickText                   case
+ 
+ # First, let's debug what's actually in the dropdown
+     ClickElement                xpath=//button[@name="selectObjectList"]
+     Sleep                       2s    # Give more time for dropdown to load
+
+# Debug: Take a screenshot to see what's available
+Screenshot                  dropdown_opened
+
+# Try to find case with different variations
+${case_found}=              Run Keyword And Return Status    VerifyText    case         timeout=5s
+${Case_found}=              Run Keyword And Return Status    VerifyText    Case         timeout=5s
+${CASE_found}=              Run Keyword And Return Status    VerifyText    CASE         timeout=5s
+
+    IF    ${case_found}
+        ClickText               case
+    ELSE IF    ${Case_found}
+        ClickText               Case
+    ELSE IF    ${CASE_found}
+        ClickText               CASE
+    ELSE
+    Log                     Case option not found, trying to scroll and search
+    # Scroll within the dropdown area
+    Scroll                  //html                          down            300
+    Sleep                   1s
+    ${case_found_after_scroll}=    Run Keyword And Return Status    VerifyText    case    timeout=5s
+    IF    ${case_found_after_scroll}
+        ClickText           case
+    ELSE
+        # Try arrow key navigation
+        FOR    ${i}    IN RANGE    10    # Try up to 10 down arrows
+            HotKey          down
+            Sleep           0.5s
+            ${found}=       Run Keyword And Return Status    VerifyText    case    timeout=2s
+            IF    ${found}
+                ClickText   case
+                BREAK
+            END
+        END
+    END
+END
+
+    ClickText    Case    anchor=Skip to Navigation
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SandboxRefresh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    VerifyText    Fields Available for Selection\n\nHelp\nSearch Fields
+    ClickText    Case    anchor=Skip to Navigation
