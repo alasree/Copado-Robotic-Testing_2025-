@@ -553,8 +553,31 @@ END
     VerifyText                  Fields Available for Selection\n\nHelp\nSearch Fields
     ClickText                   Case                        anchor=Skip to Navigation
 User Transformation
-    ClickElement    xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
-    
+# it is the xpath to select the whole table
+#     ClickElement    xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
+    ClickElement    xpath=//input[@id=//label[span[normalize-space(.)='Select Item 1']]/@for]
+    Scroll                      //html                      down                        1000
+    ClickText                   Deactivate
+    VerifyText                  Deactivate these users?
+    ClickText                   OK
+    GetText                     Deactivation initiated for 1 users
+    ClickText                   Status
+    GetText                     User Deactivation
+    Scroll                      //html                      down                        1000
+instaed of using the scroll no of times
+     Scroll                      //html                      down                        1000
+     ${scroll_distance}=         Set Variable                1000
+     FOR    ${i}    IN RANGE    3
+    Scroll                  //html                      down                        ${scroll_distance}
+    END
+# For scroll to up
+${scroll_distance}=         Set Variable                1000
+FOR    ${i}    IN RANGE    15
+    Scroll                  //html                      up                        ${scroll_distance}
+END
+
+
+
 
 
         
