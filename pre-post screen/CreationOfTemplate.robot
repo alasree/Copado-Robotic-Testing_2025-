@@ -348,6 +348,27 @@ Searchbar For ScheduledJobs
 SCREEN 2---SANDBOX REFRESH
     ClickText                   Next                        anchor=Edit Template
     ClickElement                xpath=//button[.//span[text()="Select an Org"]]
+    ClickText                   resfreshqa1
+    VerifyText                  All Active Users 
+    ClickText                   Validate Template
+    ClickText                   Select Apex Test Level
+    ClickElement                xpath=//button[span[normalize-space(text())='Select an Option']]
+    ClickText                   Run Secified Tests
+    ClickElement                 xpath=//input[@placeholder="Enter test class"]
+     WriteText                    Apexclass 1
+     ClickElement                 xpath=//button[@title='Add' and .//span[normalize-space(.)='Add']]
+     ClickElement                xpath=//span[@title="Apexclass 1"]
+     ClickElement                 xpath=//input[@placeholder="Enter test class"]
+     WriteText                    Apexclass 2
+     ClickElement                 xpath=//button[@title='Add' and .//span[normalize-space(.)='Add']]
+     ClickElement                 xpath=//input[@placeholder="Enter test class"]
+     WriteText                    Apexclass 3
+     ClickElement                 xpath=//button[@title='Add' and .//span[normalize-space(.)='Add']]
+     ClickElement                 xpath=//button[normalize-space(text())='Validate Test']
+     VerifyText                   Validate Template is started.
+
+
+
 the select org is not wrk properly
 MetadataRestore SCREEN
     ClickText                   Next                        anchor=Start Refresh
