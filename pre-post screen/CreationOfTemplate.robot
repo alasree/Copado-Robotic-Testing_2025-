@@ -552,3 +552,5 @@ END
 
     VerifyText                  Fields Available for Selection\n\nHelp\nSearch Fields
     ClickText                   Case                        anchor=Skip to Navigation
+User Transformation
+    ClickElement    xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
