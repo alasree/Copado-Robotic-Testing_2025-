@@ -36,8 +36,8 @@ ${users_Empty}                  No User data available for the selected data typ
 ${xpath_of_iploadfile}          xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-    #                           Set Library Search Order    QForce                      QWeb
-    #                           Open Browser                about:blank                 chrome
+                            #   Set Library Search Order    QForce                      QWeb
+                            #   Open Browser                about:blank                 chrome
 
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
@@ -348,12 +348,12 @@ Searchbar For ScheduledJobs
 SCREEN 2---SANDBOX REFRESH
     ClickText                   Next                        anchor=Edit Template
     ClickElement                xpath=//button[.//span[text()="Select an Org"]]
-    ClickText                   resfreshqa1
+    ClickText                   refreshqa1
     VerifyText                  All Active Users
     ClickText                   Validate Template
     ClickText                   Select Apex Test Level
     ClickElement                xpath=//button[span[normalize-space(text())='Select an Option']]
-    ClickText                   Run Secified Tests
+    ClickText                   Run Specified Tests
     ClickElement                xpath=//input[@placeholder="Enter test class"]
     WriteText                   Apexclass 1
     ClickElement                xpath=//button[@title='Add' and .//span[normalize-space(.)='Add']]
@@ -365,11 +365,15 @@ SCREEN 2---SANDBOX REFRESH
     WriteText                   Apexclass 3
     ClickElement                xpath=//button[@title='Add' and .//span[normalize-space(.)='Add']]
     ClickElement                xpath=//button[normalize-space(text())='Validate Test']
-    VerifyText                  Validate Template is started.
-
-
-
-the select org is not wrk properly
+    GetText                  Validate Template is started.
+    ClickText                   Status
+    VerifyText                  Validation
+    VerifyText                  Last Validated Log
+    VerifyText                  LN--
+    VerifyText                  Last Validated Date
+    VerifyText                  2025
+    VerifyText                  Last Validated Status
+    VerifyText                  Status
 MetadataRestore SCREEN
     ClickText                   Next                        anchor=Start Refresh
     ClickElement                xpath=//span[@title="Metadata"]
