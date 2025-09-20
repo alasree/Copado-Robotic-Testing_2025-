@@ -554,3 +554,7 @@ END
     ClickText                   Case                        anchor=Skip to Navigation
 User Transformation
     ClickElement    xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
+    
+
+
+        
