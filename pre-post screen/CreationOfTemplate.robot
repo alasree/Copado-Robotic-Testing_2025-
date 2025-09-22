@@ -572,9 +572,12 @@ instaed of using the scroll no of times
     END
 # For scroll to up
 ${scroll_distance}=         Set Variable                1000
-FOR    ${i}    IN RANGE    15
+    FOR    ${i}    IN RANGE    15
     Scroll                  //html                      up                        ${scroll_distance}
-END
+    END
+    ClickText                   Status
+    
+
 
 
 
