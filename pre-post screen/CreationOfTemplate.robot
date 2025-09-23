@@ -445,9 +445,14 @@ Metadata Tranformation without Upload of file
     ClickText                        Confirm
       FOR    ${i}    IN RANGE    15
     Scroll                  //html                      up                        ${scroll_distance}
-    END
 
+    END
     ClickText                   Status
+    
+
+
+
+    
     
 
 
