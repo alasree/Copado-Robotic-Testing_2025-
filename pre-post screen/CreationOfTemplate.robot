@@ -430,18 +430,22 @@ MetadataRestore SCREEN
 
 Metadata Tranformation without Upload of file
     ClickElement                xpath=//span[@title="Search and Replace Rules"]
-     ClickElement                xpath=//span[@title="Suffix Rules"]
-      ClickElement                xpath=//span[@title="Apex Script"]
-      ClickElement                xpath=//span[@title="Logs Information"]
-      ClickText                   Execute
+    ClickElement                xpath=//span[@title="Suffix Rules"]
+    ClickElement                xpath=//span[@title="Apex Script"]
+    ClickElement                xpath=//span[@title="Logs Information"]
 
-        VerifyText                        Select Execution Order
-        ClickElement                     xpath=//button[.//span[normalize-space(text())='Select an Option']]
-        ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[1]
-        ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
+    ClickText                   Execute
+    VerifyText                        Select Execution Order
+    ClickElement                     xpath=//button[.//span[normalize-space(text())='Select an Option']]
+    ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[1]
+    ClickText                        Search & Replace
+    ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
         VerifyText                       Note: Apex Script will execute last.
 
-        ClickText                        Confirm
+    ClickText                        Confirm
+    Scroll                      //html                      up                        500
+    ClickText                   Status
+    
 
 
 
