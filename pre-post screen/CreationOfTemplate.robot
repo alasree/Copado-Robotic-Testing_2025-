@@ -439,16 +439,17 @@ Metadata Tranformation without Upload of file
     ClickElement                     xpath=//button[.//span[normalize-space(text())='Select an Option']]
     ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[1]
     ClickText                        Search & Replace
-    ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
-        VerifyText                       Note: Apex Script will execute last.
 
+    ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
+    VerifyText                       Note: Apex Script will execute last.
     ClickText                        Confirm
       FOR    ${i}    IN RANGE    15
     Scroll                  //html                      up                        ${scroll_distance}
 
     END
     ClickText                   Status
-    
+
+
 
 
 
@@ -612,6 +613,10 @@ ${scroll_distance}=         Set Variable                1000
 UserTranformation user Activate
   VerifyText    false    
   ClickElement    xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
+
+  # Scroll down in dropdown area using coordinates
+    ScrollDown locator=//div[contains(@class,'dropdown')]  count=3
+    ClickText  ${hidden_component_name}
 
 
 
