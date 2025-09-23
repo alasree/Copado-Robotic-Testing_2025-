@@ -36,8 +36,8 @@ ${users_Empty}                  No User data available for the selected data typ
 ${xpath_of_iploadfile}          xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-      Set Library Search Order    QForce                      QWeb
-      Open Browser                about:blank                 chrome
+    #   Set Library Search Order    QForce                      QWeb
+    #   Open Browser                about:blank                 chrome
 
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
@@ -428,6 +428,24 @@ MetadataRestore SCREEN
 
     #                           # https://github.com/alasree/Copado-Robotic-Testing_2025-/blob/main/Resources/search13.csv
 
+Metadata Tranformation without Upload of file
+    ClickElement                xpath=//span[@title="Search and Replace Rules"]
+     ClickElement                xpath=//span[@title="Suffix Rules"]
+      ClickElement                xpath=//span[@title="Apex Script"]
+      ClickElement                xpath=//span[@title="Logs Information"]
+
+        VerifyText                        Select Execution Order
+        ClickElement                     xpath=//button[.//span[normalize-space(text())='Select an Option']]
+        ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[1]
+        ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
+        VerifyText                       Note: Apex Script will execute last.
+        ClickText                        Confirm
+
+
+
+
+
+
 DataRestore Screen
     ClickElement                xpath=//span[@title="Users Information"]
     ClickElement                xpath=(//input[@data-navigation="enable"])[3]
@@ -578,7 +596,7 @@ ${scroll_distance}=         Set Variable                1000
     END
     ClickText                   Status
 UserTranformation user Activate
-  VerifyText    False    
+  VerifyText    false    
   ClickElement    xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
 
 
