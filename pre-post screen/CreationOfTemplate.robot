@@ -443,7 +443,10 @@ Metadata Tranformation without Upload of file
         VerifyText                       Note: Apex Script will execute last.
 
     ClickText                        Confirm
-    Scroll                      //html                      up                        500
+      FOR    ${i}    IN RANGE    15
+    Scroll                  //html                      up                        ${scroll_distance}
+    END
+
     ClickText                   Status
     
 
