@@ -577,6 +577,11 @@ ${scroll_distance}=         Set Variable                1000
     Scroll                  //html                      up                        ${scroll_distance}
     END
     ClickText                   Status
+UserTranformation user Activate
+  VerifyText    False    
+  ClickElement    xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
+
+
 
 
 
