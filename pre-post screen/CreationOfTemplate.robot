@@ -433,12 +433,14 @@ Metadata Tranformation without Upload of file
      ClickElement                xpath=//span[@title="Suffix Rules"]
       ClickElement                xpath=//span[@title="Apex Script"]
       ClickElement                xpath=//span[@title="Logs Information"]
+      ClickText                   Execute
 
         VerifyText                        Select Execution Order
         ClickElement                     xpath=//button[.//span[normalize-space(text())='Select an Option']]
         ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[1]
         ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
         VerifyText                       Note: Apex Script will execute last.
+
         ClickText                        Confirm
 
 
