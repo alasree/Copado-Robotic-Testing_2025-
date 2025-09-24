@@ -615,8 +615,9 @@ UserTranformation user Activate
   ClickElement    xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
 
   # Scroll down in dropdown area using coordinates
-    ScrollDown locator=//div[contains(@class,'dropdown')]  count=3
-    ClickText  ${hidden_component_name}
+    # 
+    
+    ClickElement    xpath=//div[@id='dropdown-element-880']
 
 
 
