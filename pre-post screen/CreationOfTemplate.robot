@@ -443,12 +443,7 @@ Metadata Tranformation without Upload of file
     ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
     VerifyText                       Note: Apex Script will execute last.
     ClickText                        Confirm
-      FOR    ${i}    IN RANGE    15
-    Scroll                  //html                      up                        ${scroll_distance}
-
-    END
-    ClickText                   Status
-
+    
 
 
 
