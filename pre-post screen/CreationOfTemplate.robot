@@ -225,7 +225,7 @@ Editing the Suffix Values in EditTemplate
     VerifyText                  A Suffix rule for metadata type "CustomMetadata" already exists!
     VerifyText                  A Suffix rule for metadata type "ConnectedApp" already exists!
     VerifyText                  A Suffix rule for metadata type "CustomLabel" already exists!
-    Rest
+    Reset
     VerifyText                  A Suffix rule for metadata type "WorkflowAlert" already exists!
     VerifyText                  A Suffix rule for metadata type "EmailServicesFunction" already exists!
     # ClickElement              xpath//button[@name="selectMaskingTypeForEdit"]
