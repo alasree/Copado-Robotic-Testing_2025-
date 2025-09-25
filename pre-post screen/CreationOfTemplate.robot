@@ -614,6 +614,36 @@ UserTranformation user Activate
     
     ClickElement    xpath=//div[@id='dropdown-element-880']
 
+    ClickText                   Next                        anchor=Execute
+DataTranformation
+   VerifyText                  Data Transformation
+    ClickElement                xpath=//button[@name="selectObjectList"]
+    ClickElement                xpath=//span[@title="case"]
+    ClickElement                xpath=//span[@title="Opportunity"]
+    VerifyText                  All Data Types
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    GetText                   Cannot select unsupported datatype
+    ClickElement              xpath=//button[@data-value="All Data Types"]
+    ClickText                 Supported Data Types
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    ClickText                   Next              anchor=Last
+     ClickElement                xpath=//input[@class='datatable-select-all']
+    VerifyText                   Fields Selected for Masking
+    ClickElement                 xpath=//input[@type="search"][1]
+    ${scroll_distance}=         Set Variable                1000
+     FOR    ${i}    IN RANGE    3
+    Scroll                  //html                      down                        ${scroll_distance}
+    END
+    WriteText                   
+
+
+
+
+
+ 
+
+
+
 
 
 
