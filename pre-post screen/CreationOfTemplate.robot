@@ -36,8 +36,8 @@ ${users_Empty}                  No User data available for the selected data typ
 ${xpath_of_iploadfile}          xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-    #   Set Library Search Order    QForce                      QWeb
-    #   Open Browser                about:blank                 chrome
+      Set Library Search Order    QForce                      QWeb
+      Open Browser                about:blank                 chrome
 
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
