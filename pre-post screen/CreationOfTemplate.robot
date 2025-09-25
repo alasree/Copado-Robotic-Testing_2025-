@@ -114,6 +114,7 @@ Select the ApexScript
     ClickText                   Next                        anchor=Back
 
     ClickElement                xpath=//button[@name="selectData"]
+Selecting the users
     ClickText                   Users
     Scroll                      //html                      page_up
     FOR                         ${SelectedUsers}            IN                          @{Users_Selection}
