@@ -17,7 +17,7 @@ Library                         QVision                     Qweb
 Run Script File
     [Arguments]                 ${path}
     File Should Exist           ${path}
-    ${result}=                  Run Process                 robot                       ${path}                     stdout=stdout.txt           stderr=stderr.txt
+    ${result}=                  Run Process                 robot                       ${path}                     stdout=stdout.txt    stderr=stderr.txt
     Log File                    stdout.txt
     Log File                    stderr.txt
     Should Be Equal As Integers                             ${result.rc}                0
@@ -30,14 +30,14 @@ ${actual_error}                 Null
 ${search}                       xpath=//input[@placeholder="Search..."]
 ${Enterthescript}               xpath=//textarea[@placeholder="Enter your Apex script..."]
 ${users_Empty}                  No User data available for the selected data type in the org.
-@{Users_Selection}              Select Item 1               Select Item 2               Select Item 3               Select Item 4               Select Item 5
-@{Custom_settings}              Select Item 1               Select Item 2               Select Item 3               Select Item 4               Select Item 5
-@{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4               Select Item 5
+@{Users_Selection}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+@{Custom_settings}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+@{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
 ${xpath_of_iploadfile}          xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-      Set Library Search Order    QForce                      QWeb
-      Open Browser                about:blank                 chrome
+                              Set Library Search Order    QForce                      QWeb
+                              Open Browser                about:blank                 chrome
 
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
@@ -66,7 +66,7 @@ Metadata Retreival
         ClickText               ${Metadata_Type}            timeout=40s
 
         Sleep                   3s
-        ${data_exists}=         Run Keyword And Return Status                           VerifyText                  Search Metadata Components                       timeout=3s
+        ${data_exists}=         Run Keyword And Return Status                           VerifyText                  Search Metadata Components                timeout=3s
         IF                      ${data_exists}
         # Click Checkbox        Select All                  on                          index=1                     timeout=20s
         # # ClickText           Next                        anchor=Last
@@ -165,11 +165,11 @@ Edit MetadataRetrival
         ClickText               ${Metadata_Type}            timeout=40s
 
         Sleep                   10s
-        ${data_exists}=         Run Keyword And Return Status                           VerifyText                  Search Metadata Components                       timeout=3s
+        ${data_exists}=         Run Keyword And Return Status                           VerifyText                  Search Metadata Components                timeout=3s
         IF                      ${data_exists}
-            Click Checkbox      Select All                  on                          anchor=All Metadata index=1                             timeout=20s
+            Click Checkbox      Select All                  on                          anchor=All Metadata index=1                      timeout=20s
             # # ClickText       Next                        anchor=Last
-            # # Click Checkbox                              Select All                  on                          index=1                     timeout=20s
+            # # Click Checkbox                              Select All                  on                          index=1              timeout=20s
             # Click
             #                   ClickText                   Select Item 1 Chosse a Row
             #                   ClickText                   Select Item 2 Chosse a Row
@@ -365,7 +365,7 @@ SCREEN 2---SANDBOX REFRESH
     WriteText                   Apexclass 3
     ClickElement                xpath=//button[@title='Add' and .//span[normalize-space(.)='Add']]
     ClickElement                xpath=//button[normalize-space(text())='Validate Test']
-    GetText                  Validate Template is started.
+    GetText                     Validate Template is started.
     ClickText                   Status
     VerifyText                  Validation
     VerifyText                  Last Validated Log
@@ -435,21 +435,21 @@ Metadata Tranformation without Upload of file
     ClickElement                xpath=//span[@title="Logs Information"]
 
     ClickText                   Execute
-    VerifyText                        Select Execution Order
-    ClickElement                     xpath=//button[.//span[normalize-space(text())='Select an Option']]
-    ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[1]
-    ClickText                        Search & Replace
+    VerifyText                  Select Execution Order
+    ClickElement                xpath=//button[.//span[normalize-space(text())='Select an Option']]
+    ClickElement                xpath=(//button[.//span[normalize-space(text())='Select an Option']])[1]
+    ClickText                   Search & Replace
 
-    ClickElement                     xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
-    VerifyText                       Note: Apex Script will execute last.
-    ClickText                        Confirm
-    
-
+    ClickElement                xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
+    VerifyText                  Note: Apex Script will execute last.
+    ClickText                   Confirm
 
 
 
-    
-    
+
+
+
+
 
 
 
@@ -509,82 +509,82 @@ DeleteScheduledJobs
     VerifyText                  LN-00
     GetText                     Custom Settings
     VerifyText                  An Email is triggered on the execution of Schedule jobs and Deleted Scheduled jobs with respective status.
-# DATA TRANSFORMATION:
-#     ClickText                   Next                        anchor=Execute
-#     VerifyText                  Data Transformation
-#     ClickElement                xpath=//button[@name="selectObjectList"]
-#     Scroll                      //html                      down                        100
-#     Scroll                      //html                      down                        500
-#     HotKey                      down
-#     PressUntil                  Case                        pagedown
-#     VerifyText                  Contact
-#     #                           Handle Dropdown Scrolling
-#     # # First dropdown - Users
-#     # ClickElement              xpath=//button[@name="selectObjectList"]
-#     # # ClickText               Users
-#     # # Sleep                   1s                          # Allow dropdown to fully load
+    # DATA TRANSFORMATION:
+    #                           ClickText                   Next                        anchor=Execute
+    #                           VerifyText                  Data Transformation
+    #                           ClickElement                xpath=//button[@name="selectObjectList"]
+    #                           Scroll                      //html                      down                        100
+    #                           Scroll                      //html                      down                        500
+    #                           HotKey                      down
+    #                           PressUntil                  Case                        pagedown
+    #                           VerifyText                  Contact
+    #                           #                           Handle Dropdown Scrolling
+    #                           # # First dropdown - Users
+    #                           # ClickElement              xpath=//button[@name="selectObjectList"]
+    #                           # # ClickText               Users
+    #                           # # Sleep                   1s                          # Allow dropdown to fully load
 
-#     # # Try direct selection first, then scroll if needed
-#     # ${item_found}=            Run Keyword And Return Status                           VerifyText                  case                        timeout=2s
-#     # IF                        not ${item_found}
-#     #                           # Scroll within dropdown or use arrow keys
-#     #                           HotKey                      down
-#     #                           HotKey                      down
-#     #                           HotKey                      down
-#     #                           # Or use: Scroll            //html                      down                        300
-#     # END
-#     # ClickText                 case
-    
-#     # First, let's debug what's actually in the dropdown
-#     ClickElement                xpath=//button[@name="selectObjectList"]
-#     Sleep                       2s                          # Give more time for dropdown to load
+    #                           # # Try direct selection first, then scroll if needed
+    #                           # ${item_found}=            Run Keyword And Return Status                           VerifyText           case                 timeout=2s
+    #                           # IF                        not ${item_found}
+    #                           #                           # Scroll within dropdown or use arrow keys
+    #                           #                           HotKey                      down
+    #                           #                           HotKey                      down
+    #                           #                           HotKey                      down
+    #                           #                           # Or use: Scroll            //html                      down                 300
+    #                           # END
+    #                           # ClickText                 case
 
-#     # Debug: Take a screenshot to see what's available
-# Screenshot                  dropdown_opened
+    #                           # First, let's debug what's actually in the dropdown
+    #                           ClickElement                xpath=//button[@name="selectObjectList"]
+    #                           Sleep                       2s                          # Give more time for dropdown to load
 
-#     # Try to find case with different variations
-# ${case_found}=              Run Keyword And Return Status    VerifyText    case         timeout=5s
-# ${Case_found}=              Run Keyword And Return Status    VerifyText    Case         timeout=5s
-# ${CASE_found}=              Run Keyword And Return Status    VerifyText    CASE         timeout=5s
+    #                           # Debug: Take a screenshot to see what's available
+    # Screenshot                dropdown_opened
 
-#     IF                          ${case_found}
-#         ClickText               case
-#     ELSE IF                     ${Case_found}
-#         ClickText               Case
-#     ELSE IF                     ${CASE_found}
-#         ClickText               CASE
-#     ELSE
-#         Log                     Case option not found, trying to scroll and search
-#         # Scroll within the dropdown area
-#         Scroll                  //html                      down                        300
-#         Sleep                   1s
-#         ${case_found_after_scroll}=                         Run Keyword And Return Status                           VerifyText                  case                 timeout=5s
-#         IF                      ${case_found_after_scroll}
-#             ClickText           case
-#         ELSE
-#         # Try arrow key navigation
-#             FOR                 ${i}                        IN RANGE                    10                          # Try up to 10 down arrows
-#                 HotKey          down
-#                 Sleep           0.5s
-#                 ${found}=       Run Keyword And Return Status                           VerifyText                  case                        timeout=2s
-#                 IF              ${found}
-#                     ClickText                               case
-#                     BREAK
-#                 END
-#             END
-#         END
-# END
+    #                           # Try to find case with different variations
+    # ${case_found}=            Run Keyword And Return Status                           VerifyText                  case                 timeout=5s
+    # ${Case_found}=            Run Keyword And Return Status                           VerifyText                  Case                 timeout=5s
+    # ${CASE_found}=            Run Keyword And Return Status                           VerifyText                  CASE                 timeout=5s
 
-#     ClickText                   Case                        anchor=Skip to Navigation
+    #                           IF                          ${case_found}
+    #                           ClickText                   case
+    #                           ELSE IF                     ${Case_found}
+    #                           ClickText                   Case
+    #                           ELSE IF                     ${CASE_found}
+    #                           ClickText                   CASE
+    #                           ELSE
+    #                           Log                         Case option not found, trying to scroll and search
+    #                           # Scroll within the dropdown area
+    #                           Scroll                      //html                      down                        300
+    #                           Sleep                       1s
+    #                           ${case_found_after_scroll}=                             Run Keyword And Return Status                    VerifyText           case    timeout=5s
+    #                           IF                          ${case_found_after_scroll}
+    #                           ClickText                   case
+    #                           ELSE
+    #                           # Try arrow key navigation
+    #                           FOR                         ${i}                        IN RANGE                    10                   # Try up to 10 down arrows
+    #                           HotKey                      down
+    #                           Sleep                       0.5s
+    #                           ${found}=                   Run Keyword And Return Status                           VerifyText           case                 timeout=2s
+    #                           IF                          ${found}
+    #                           ClickText                   case
+    #                           BREAK
+    #                           END
+    #                           END
+    #                           END
+    # END
+
+    #                           ClickText                   Case                        anchor=Skip to Navigation
 
 
 
-#     VerifyText                  Fields Available for Selection\n\nHelp\nSearch Fields
-#     ClickText                   Case                        anchor=Skip to Navigation
+    #                           VerifyText                  Fields Available for Selection\n\nHelp\nSearch Fields
+    #                           ClickText                   Case                        anchor=Skip to Navigation
 User Transformation
-# it is the xpath to select the whole table
-#     ClickElement    xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
-    ClickElement    xpath=//input[@id=//label[span[normalize-space(.)='Select Item 1']]/@for]
+    # it is the xpath to select the whole table
+    #                           ClickElement                xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
+    ClickElement                xpath=//input[@id=//label[span[normalize-space(.)='Select Item 1']]/@for]
     Scroll                      //html                      down                        1000
     ClickText                   Deactivate
     VerifyText                  Deactivate these users?
@@ -594,53 +594,61 @@ User Transformation
     GetText                     User Deactivation
     Scroll                      //html                      down                        1000
 instaed of using the scroll no of times
-     Scroll                      //html                      down                        1000
-     ${scroll_distance}=         Set Variable                1000
-     FOR    ${i}    IN RANGE    3
-    Scroll                  //html                      down                        ${scroll_distance}
+    Scroll                      //html                      down                        1000
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    3
+        Scroll                  //html                      down                        ${scroll_distance}
     END
-# For scroll to up
+    # For scroll to up
 ${scroll_distance}=         Set Variable                1000
-    FOR    ${i}    IN RANGE    15
-    Scroll                  //html                      up                        ${scroll_distance}
+    FOR                         ${i}                        IN RANGE                    15
+        Scroll                  //html                      up                          ${scroll_distance}
     END
     ClickText                   Status
 UserTranformation user Activate
-  VerifyText    false    
-  ClickElement    xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
+    VerifyText                  false
+    ClickElement                xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
 
-  # Scroll down in dropdown area using coordinates
-    # 
-    
-    ClickElement    xpath=//div[@id='dropdown-element-880']
+    # Scroll down in dropdown area using coordinates
+    #
+
+    ClickElement                xpath=//div[@id='dropdown-element-880']
 
     ClickText                   Next                        anchor=Execute
 DataTranformation
-   VerifyText                  Data Transformation
+    VerifyText                  Data Transformation
     ClickElement                xpath=//button[@name="selectObjectList"]
-    ClickElement                xpath=//span[@title="case"]
+    # ClickElement              xpath=//span[@title="case"]
     ClickElement                xpath=//span[@title="Opportunity"]
-    VerifyText                  All Data Types
-    ClickElement                xpath=//input[@class='datatable-select-all']
-    GetText                   Cannot select unsupported datatype
-    ClickElement              xpath=//button[@data-value="All Data Types"]
-    ClickText                 Supported Data Types
-    ClickElement                xpath=//input[@class='datatable-select-all']
-    ClickText                   Next              anchor=Last
-     ClickElement                xpath=//input[@class='datatable-select-all']
-    VerifyText                   Fields Selected for Masking
-    ClickElement                 xpath=//input[@type="search"][1]
-    ${scroll_distance}=         Set Variable                1000
-     FOR    ${i}    IN RANGE    3
-    Scroll                  //html                      down                        ${scroll_distance}
+    ${scroll_distance}=         Set Variable                500
+    FOR                         ${i}                        IN RANGE                    3
+        Scroll                  //html                      up                          ${scroll_distance}
     END
-    WriteText                   
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    VerifyText                  Cannot select unsupported data type
+    VerifyText                  All Data Types
+    ClickElement                xpath=//button[@data-value="All Data Types"]
+    ClickText                   Supported Data Types
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    ClickText                   Next                        anchor=Last
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    3
+        Scroll                  //html                      down                        ${scroll_distance}
+    END
+    VerifyText                  Fields Selected for Masking
+    ClickElement                xpath=(//input[@type="search"])[3]
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    3
+        Scroll                  //html                      down                        ${scroll_distance}
+    END
+    WriteText
 
 
 
 
 
- 
+    
 
 
 
@@ -652,4 +660,3 @@ DataTranformation
 
 
 
-        
