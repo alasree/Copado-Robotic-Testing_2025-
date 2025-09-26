@@ -638,12 +638,39 @@ DataTranformation
         Scroll                  //html                      down                        ${scroll_distance}
     END
     VerifyText                  Fields Selected for Masking
-    ClickElement                xpath=(//input[@type="search"])[3]
     ${scroll_distance}=         Set Variable                1000
-    FOR                         ${i}                        IN RANGE                    3
+    FOR                         ${i}                        IN RANGE                    5
         Scroll                  //html                      down                        ${scroll_distance}
     END
-    WriteText
+    ClickElement                xpath=(//input[@type="search"])[3]
+    WriteText                   Oppo
+    VerifyText                  No fields found for the selected data type.
+    ClearText                   
+    ClickElement                xpath=(//input[@type="search"])[3]
+    WriteText                   Description
+     ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    5
+        Scroll                  //html                      up                        ${scroll_distance}
+    END
+    ClickText                   Execute                     anchor=Next
+    VerifyText                  Confirm Data Masking
+    ClickText                   Apply
+    VerifyText                  Data Transformation initiated successfully.
+    ClickText                   Status
+    # Click Status button while it exists
+    ClickItemWhile    Status    element=True    timeout=10s    interval=2s
+
+    VerifyText                  Success
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    10
+        Scroll                  //html                      up                        ${scroll_distance}
+    END
+
+
+    
+    
+
+
 
 
 
