@@ -666,7 +666,34 @@ DataTranformation
     FOR                         ${i}                        IN RANGE                    10
         Scroll                  //html                      up                        ${scroll_distance}
     END
-
+second 
+DataTranformation
+    VerifyText                  Data Transformation
+    ClickElement                xpath=//button[@name="selectObjectList"]
+    # ClickElement              xpath=//span[@title="case"]
+    ClickElement                xpath=//span[@title="Opportunity"]
+    ${scroll_distance}=         Set Variable                500
+    FOR                         ${i}                        IN RANGE                    3
+        Scroll                  //html                      up                          ${scroll_distance}
+    END
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    VerifyText                  Cannot select unsupported data type
+    VerifyText                  All Data Types
+    ClickElement                xpath=//button[@data-value="All Data Types"]
+    ClickText                   Supported Data Types
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    ClickText                   Next                        anchor=Last
+    ClickElement                xpath=//input[@class='datatable-select-all']
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    3
+        Scroll                  //html                      down                        ${scroll_distance}
+    END
+    VerifyText                  Fields Selected for Masking
+    ClickElement                xpath=(//input[@type="search"])[3]
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    3
+        Scroll                  //html                      down                        ${scroll_distance}
+    END
 
     
     
