@@ -645,12 +645,12 @@ DataTranformation
     ClickElement                xpath=(//input[@type="search"])[3]
     WriteText                   Oppo
     VerifyText                  No fields found for the selected data type.
-    ClearText                   
+    ClickText                   Clear
     ClickElement                xpath=(//input[@type="search"])[3]
     WriteText                   Description
      ${scroll_distance}=         Set Variable                1000
-     
-    FOR                         ${i}                        IN RANGE                    5
+
+    FOR                         ${i}                        IN RANGE                    9
         Scroll                  //html                      up                        ${scroll_distance}
     END
     ClickText                   Execute                     anchor=Next
