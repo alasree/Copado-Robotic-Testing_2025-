@@ -688,8 +688,17 @@ DataTranformation
     FOR                         ${i}                        IN RANGE                    3
         Scroll                  //html                      down                        ${scroll_distance}
     END
-
-    
+Related 
+   ClickText                    Related
+   ClickText                    View All
+   ClickElement                 xpath=//a[starts-with(text(), 'RefreshTemplate_')]
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    10
+        Scroll                  //html                      down                        ${scroll_distance}
+    END
+    VerifyText                  View All
+    ClickText                   View All
+    ClickElement                 xpath=//a[starts-with(text(), 'RefreshTemplate_')]
     
 
 
