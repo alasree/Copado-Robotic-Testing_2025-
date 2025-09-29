@@ -676,8 +676,9 @@ DataTranformation
     FOR                         ${i}                        IN RANGE                    3
         Scroll                  //html                      up                          ${scroll_distance}
     END
-    ClickElement                xpath=//input[@class='datatable-select-all']
-    VerifyText                  Cannot select unsupported data type
+    # ClickElement                xpath=//input[@class='datatable-select-all']
+    ClickElement                xpath=//button[@name='supportFilter']
+   GetText                  Cannot select unsupported data type
     VerifyText                  All Data Types
     ClickElement                xpath=//button[@data-value="All Data Types"]
     ClickText                   Supported Data Types
