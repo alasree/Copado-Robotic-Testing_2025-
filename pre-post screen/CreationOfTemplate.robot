@@ -300,15 +300,20 @@ SearchBar for ApexClass
     WriteText                   ALMController
     VerifyText                  ALMController
     # Scroll                    //html                      page_down
-    Scroll                      //html                      down                        100
-    Scroll                      //html                      down                        100
-    Scroll                      //html                      down                        1500
-    Scroll                      //html                      down                        1500
-    Scroll                      //html                      down                        100
-    Scroll                      //html                      down                        100
-    Scroll                      //html                      down                        1500
-    Scroll                      //html                      down
-    Scroll                      //html                      down                        1500
+    # Scroll                      //html                      down                        100
+    # Scroll                      //html                      down                        100
+    # Scroll                      //html                      down                        1500
+    # Scroll                      //html                      down                        1500
+    # Scroll                      //html                      down                        100
+    # Scroll                      //html                      down                        100
+    # Scroll                      //html                      down                        1500
+    # Scroll                      //html                      down
+    # Scroll                      //html                      down                        1500
+    ${scroll_distance}=         Set Variable                1000
+
+    FOR                         ${i}                        IN RANGE                    20
+        Scroll                  //html                      up                        ${scroll_distance}
+    END
 Searchbar For Users
     ClickElement                xpath=(//input[@type="search"])[3]
     WriteText                   OrgId__c----fcgvhbjn
@@ -444,19 +449,6 @@ Metadata Tranformation without Upload of file
     ClickElement                xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
     VerifyText                  Note: Apex Script will execute last.
     ClickText                   Confirm
-
-
-
-
-
-
-
-
-
-
-
-
-
 DataRestore Screen
     ClickElement                xpath=//span[@title="Users Information"]
     ClickElement                xpath=(//input[@data-navigation="enable"])[3]
