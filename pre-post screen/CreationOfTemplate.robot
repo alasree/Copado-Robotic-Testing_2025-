@@ -30,9 +30,9 @@ ${actual_error}                 Null
 ${search}                       xpath=//input[@placeholder="Search..."]
 ${Enterthescript}               xpath=//textarea[@placeholder="Enter your Apex script..."]
 ${users_Empty}                  No User data available for the selected data type in the org.
-@{Users_Selection}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+@{Users_Selection}              Select Item 1               Select Item 2               Select Item 3               Select Item 4       
 @{Custom_settings}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
-@{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+@{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4        
 ${xpath_of_iploadfile}          xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
