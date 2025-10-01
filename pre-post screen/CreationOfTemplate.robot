@@ -101,7 +101,7 @@ Select the Suffix Masking
     ClickElement                xpath=//button[@title="Create Rule"]
 
     ClickElement                xpath=//button[@name="selectMaskingType"]
- Select the ApexScript
+     Select the ApexScript
 #     ClickText                   Apex Script
 #     ClickElement                xpath=//input[@inputmode="decimal"]
 #     WriteText                   1
@@ -114,7 +114,7 @@ Select the Suffix Masking
 #     ClickText                   Next                        anchor=Back
 
 #     ClickElement                xpath=//button[@name="selectData"]
-Selecting the users
+    Selecting the users
 #     ClickText                   Users
 #     Scroll                      //html                      page_up
 #     FOR                         ${SelectedUsers}            IN                          @{Users_Selection}
@@ -127,20 +127,20 @@ Selecting the users
 #     #                           ClcikText                   Search Users
 #     ClickElement                xpath=//input[@placeholder="Search..."]
 #     ClickText                   Clear
- Selecting the Custom Settings
+     Selecting the Custom Settings
 #     ClickElement                xpath=//button[@name="selectData"]
 #     ClickText                   Custom Settings
 #     FOR                         ${CS}                       IN                          @{Custom_settings}
 #         ClickText               ${CS}
 #     END
-Selecting the Scheduled Jobs
+    Selecting the Scheduled Jobs
 #     ClickElement                xpath=//button[@name="selectData"]
 #     ClickText                   Scheduled Jobs
 #     FOR                         ${Selected_ScheduledJobs}                               IN                          @{ScheduledJobs}
 #         ClickText               ${Selected_ScheduledJobs}
 #     END
 #     ClickText                   Next                        anchor=Back
- Last Step of creation of Template
+     Last Step of creation of Template
 #     # Generate random account data
 #     Evaluate                    random.seed()               random                      # initialize random generator
 #     ${random_string}=           Generate Random String      1                           [NUMBERS]
@@ -156,9 +156,9 @@ Selecting the Scheduled Jobs
 #     RefreshPage
 #     RefreshPage
 #     Scroll                      //html                      page_up
-# Steps For Edit Template
+     Steps For Edit Template
 #     ClickText                   Edit Template
- Edit MetadataRetrival
+     Edit MetadataRetrival
 
 #     FOR                         ${Metadata_Type}            IN                          @{Metadata_Types}
 #         Log To Console          ${Metadata_Type}
@@ -181,7 +181,7 @@ Selecting the Scheduled Jobs
 #         END
 #     END
 #     ClickText                   Next                        anchor=Back
-Editing the Search and Replace Values
+    Editing the Search and Replace Values
 #     # ClickElement              xpath=//button[@name="selectMaskingType"]
 #     ClickElement                xpath=//button[@name="selectMaskingTypeForEdit"]
 #     ClickText                   Search & Replace
@@ -204,7 +204,7 @@ Editing the Search and Replace Values
 #     ClickElement                xpath=//button[@title="Create Rule"]
 #     ${Success_message}=         GetText                     6 rules created successfully
 #     Log To Console              ${Success_message}=
-Editing the Suffix Values in EditTemplate
+    Editing the Suffix Values in EditTemplate
     # # ClickElement              xpath//button[@name="selectMaskingTypeForEdit"]
     # ClickElement                xpath=//button[@data-value="Search & Replace"]
     # ClickText                   Suffix
@@ -231,7 +231,7 @@ Editing the Suffix Values in EditTemplate
     # VerifyText                  A Suffix rule for metadata type "EmailServicesFunction" already exists!
     # # ClickElement              xpath//button[@name="selectMaskingTypeForEdit"]
     # ClickElement                xpath= //button[@data-value="Suffix"]
-Editing the ApexScript
+    Editing the ApexScript
     # ClickText                   Apex Script
     # ClickElement                xpath=//input[@inputmode="decimal"]
     # WriteText                   2
@@ -242,7 +242,7 @@ Editing the ApexScript
     # WriteText                   ${AccountCreation}
     # ClickElement                xpath=//button[@title="Add Script"]
     # VerifyText                  Script added Successfully
-Editing the Users
+    Editing the Users
     # ClickElement                xpath=//button[@name="selectDataForEdit"]
     # ClickText                   Users
     # VerifyText                  Biswa Mishra
@@ -291,8 +291,8 @@ Editing the Users
     # # ClickText                 25                          anchor=10
     # HotKey                      down
     # # ClickText                 10
-Metadata Restore
- SearchBar for ApexClass
+    Metadata Restore
+     SearchBar for ApexClass
 #     ClickElement                xpath=(//input[@type="search"])[2]
 #     WriteText                   alasree
 #     VerifyText                  No metadata components found matching your search criteria.
@@ -315,7 +315,7 @@ Metadata Restore
 #     FOR                         ${i}                        IN RANGE                    20
 #         Scroll                  //html                      up                        ${scroll_distance}
 #     END
-Searchbar For Users
+    Searchbar For Users
 #     ClickElement                xpath=(//input[@type="search"])[3]
 #     WriteText                   OrgId__c----fcgvhbjn
 #     # Scroll                    //html                      page_up
@@ -324,7 +324,7 @@ Searchbar For Users
 #     ClickElement                xpath=(//input[@type="search"])[3]
 #     ClickText                   Clear
 #     ClickElement                xpath=(//input[@type="search"])[3]
-Serchbar for Custom_settings
+    Serchbar for Custom_settings
 #     Scroll                      //html                      down                        100
 #     Scroll                      //html                      down                        100
 #     Scroll                      //html                      down                        1500
@@ -338,7 +338,7 @@ Serchbar for Custom_settings
 #     ClickElement                xpath=(//input[@type="search"])[4]
 #     ClickText                   Clear
 #     ClickElement                xpath=(//input[@type="search"])[4]
-Searchbar For ScheduledJobs
+    Searchbar For ScheduledJobs
 #     Scroll                      //html                      down                        100
 #     Scroll                      //html                      down                        100
 #     Scroll                      //html                      down                        1500
@@ -352,7 +352,7 @@ Searchbar For ScheduledJobs
 #     ClickElement                xpath=(//input[@type="search"])[5]
 #     WriteText                   sample
 #     ClickText                   clear
-SCREEN 2---SANDBOX REFRESH
+    SCREEN 2---SANDBOX REFRESH
     # ClickText                   Next                        anchor=Edit Template
     # ClickElement                xpath=//button[.//span[text()="Select an Org"]]
     # ClickText                   refreshqa1
@@ -381,7 +381,7 @@ SCREEN 2---SANDBOX REFRESH
     # VerifyText                  2025
     # VerifyText                  Last Validated Status
     # VerifyText                  Status
-MetadataRestore SCREEN
+    MetadataRestore SCREEN
 #     ClickText                   Next                        anchor=Start Refresh
 #     ClickElement                xpath=//span[@title="Metadata"]
 #     ClickElement                xpath=//span[@title="Logs Information"]
@@ -415,7 +415,7 @@ MetadataRestore SCREEN
     #                           #                           ${relative_path}            Set Variable                Test/../Data/PO.pdf
     #                           ${uploadforSearchrules}     Set Variable                ${CURDIR}/Resources/../main/search13.csv
 
-    pre-post screen
+    
     #                           UploadFile                  Upload Files                ${uploadforSearchrules}
 
     # Verify file exists first
@@ -435,7 +435,7 @@ MetadataRestore SCREEN
 
     #                           # https://github.com/alasree/Copado-Robotic-Testing_2025-/blob/main/Resources/search13.csv
 
-Metadata Tranformation without Upload of file
+    Metadata Tranformation without Upload of file
     # ClickElement                xpath=//span[@title="Search and Replace Rules"]
     # ClickElement                xpath=//span[@title="Suffix Rules"]
     # ClickElement                xpath=//span[@title="Apex Script"]
@@ -450,25 +450,25 @@ Metadata Tranformation without Upload of file
     # ClickElement                xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
     # VerifyText                  Note: Apex Script will execute last.
     # ClickText                   Confirm
-DataRestore Screen
-    ClickElement                xpath=//span[@title="Users Information"]
+    DataRestore Screen
+    # ClickElement                xpath=//span[@title="Users Information"]
     # ClickElement                xpath=(//input[@data-navigation="enable"])[3]
     # VerifyText                  Selected Users
     # Scroll                      //html                      down                        100
     # VerifyText                  Total Records: 1
-Custom Settings
+    Custom Settings
     # ClickElement                xpath=//span[@title="Custom Settings Information"]
     # ClickElement                xpath=(//input[@type="search"])[2]
     # WriteText                   Org
     # ClickText                   Clear
     # ClickElement                xpath=(//select[@class="slds-select"])[3]
-Scheduled Jobs
+    Scheduled Jobs
     # ClickElement                xpath=//span[@title="Schedule Jobs Information"]
     # Scroll                      //html                      up                          500
     # ClickElement                xpath=(//input[@type="search"])[3]
     # WriteText                   ala
     # VerifyText                  No schedule jobs found matching your search criteria.
-DeleteScheduledJobs
+    DeleteScheduledJobs
     # clickElement                xpath=//span[@title="Delete Schedule Jobs Information"]
     # VerifyText                  Do you want to delete the Scheduled Jobs, Report Run, and Report Notifications that were copied from the source organization to the target after the sandbox refresh? If yes, click the Execute button and select the 'Delete Scheduled Jobs' checkbox.
     # ClickText                   Logs Information
@@ -575,7 +575,7 @@ DeleteScheduledJobs
 
     #                           VerifyText                  Fields Available for Selection\n\nHelp\nSearch Fields
     #                           ClickText                   Case                        anchor=Skip to Navigation
-User Transformation
+    User Transformation
     # it is the xpath to select the whole table
     #                           ClickElement                xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
     # ClickElement                xpath=//input[@id=//label[span[normalize-space(.)='Select Item 1']]/@for]
@@ -587,7 +587,7 @@ User Transformation
     # ClickText                   Status
     # GetText                     User Deactivation
     # Scroll                      //html                      down                        1000
-instaed of using the scroll no of times
+    instaed of using the scroll no of times
     # Scroll                      //html                      down                        1000
     # ${scroll_distance}=         Set Variable                1000
     # FOR                         ${i}                        IN RANGE                    3
@@ -599,7 +599,7 @@ instaed of using the scroll no of times
 #         Scroll                  //html                      up                          ${scroll_distance}
 #     END
 #     ClickText                   Status
-UserTranformation user Activate
+    UserTranformation user Activate
     # VerifyText                  false
     # ClickElement                xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
 
@@ -609,7 +609,7 @@ UserTranformation user Activate
     # ClickElement                xpath=//div[@id='dropdown-element-880']
 
     # ClickText                   Next                        anchor=Execute
-DataTranformation
+    DataTranformation
     # VerifyText                  Data Transformation
     # ClickElement                xpath=//button[@name="selectObjectList"]
     # # ClickElement              xpath=//span[@title="case"]
@@ -660,7 +660,7 @@ DataTranformation
     #     Scroll                  //html                      up                        ${scroll_distance}
     # END
  
-second DataTranformation
+    second DataTranformation
 #     VerifyText                  Data Transformation
 #     ClickElement                xpath=//button[@name="selectObjectList"]
 #     # ClickElement              xpath=//span[@title="case"]
@@ -689,7 +689,7 @@ second DataTranformation
 #     FOR                         ${i}                        IN RANGE                    3
 #         Scroll                  //html                      down                        ${scroll_distance}
 #     END
-Related 
+    Related 
 #    ClickText                    Related
 #    ClickText                    View All
 #    ClickElement                 xpath=//a[starts-with(text(), 'RefreshTemplate_')]
