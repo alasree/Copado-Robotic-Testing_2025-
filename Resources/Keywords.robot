@@ -293,7 +293,7 @@ Editing the Users
     # ClickText                 25                          anchor=10
     HotKey                      down
     # ClickText                 10
-Metadata Restore
+
 SearchBar for ApexClass
     ClickElement                xpath=(//input[@type="search"])[2]
     WriteText                   alasree
