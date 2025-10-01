@@ -9,6 +9,10 @@ Library                    String
 
 *** Variables ***
 # ${NoMetadataMsg}           No data available for the selected metadata type in the org.
+@{Users_Selection}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+@{Custom_settings}              Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+@{ScheduledJobs}                Select Item 1               Select Item 2               Select Item 3               Select Item 4        Select Item 5
+${xpath_of_iploadfile}          xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 ***Keywords***
 Selection of Org Retreival
     [Documentation]        Login to Salesforce instance. Takes instance_url, username and password as
