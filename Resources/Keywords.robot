@@ -277,6 +277,7 @@ Editing the Users
     RefreshPage
     ClickItem                   Refresh
     # VerifyText                Metadata Backup Completed
+Retrieve Data
     Clicktext                   Retrieve Data
     VerifyText                  Choose Data to Regenerate
     ClickText                   Submit
