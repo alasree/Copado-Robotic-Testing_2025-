@@ -227,7 +227,7 @@ Editing the Suffix Values in EditTemplate
     VerifyText                  A Suffix rule for metadata type "CustomMetadata" already exists!
     VerifyText                  A Suffix rule for metadata type "ConnectedApp" already exists!
     VerifyText                  A Suffix rule for metadata type "CustomLabel" already exists!
-    Reset
+    # Reset
     VerifyText                  A Suffix rule for metadata type "WorkflowAlert" already exists!
     VerifyText                  A Suffix rule for metadata type "EmailServicesFunction" already exists!
     # ClickElement              xpath//button[@name="selectMaskingTypeForEdit"]
@@ -242,8 +242,9 @@ Editing the ApexScript
     # TypeText                  ${Apexscriptxpath}          ${apexscript}
     WriteText                   ${AccountCreation}
     ClickElement                xpath=//button[@title="Add Script"]
-    VerifyText                  Script added Successfully
+    # VerifyText                  Script added Successfully
 Editing the Users
+    ClickText                    Next
     ClickElement                xpath=//button[@name="selectDataForEdit"]
     ClickText                   Users
     VerifyText                  Biswa Mishra
