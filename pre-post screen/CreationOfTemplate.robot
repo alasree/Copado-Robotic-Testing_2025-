@@ -261,6 +261,7 @@ Select the Suffix Masking
     # RefreshPage
     # sleep                       5s
     # RefreshPage
+    Retrieve Data
     # Clicktext                   Retrieve Metadata
     # VerifyText                  Metadata regeneration initiated. Please wait while files are being generated.
     # # ClickIcon                 Refresh
