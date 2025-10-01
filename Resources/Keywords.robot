@@ -266,6 +266,7 @@ Editing the Users
     RefreshPage
     sleep                       5s
     RefreshPage
+    RefreshPage
     Clicktext                   Retrieve Metadata
     VerifyText                  Metadata regeneration initiated. Please wait while files are being generated.
     # ClickIcon                 Refresh
