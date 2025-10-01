@@ -142,6 +142,7 @@ Selecting the Scheduled Jobs
     END
     ClickText                   Next                        anchor=Back
 Last Step of creation of Template
+
     # Generate random account data
     Evaluate                    random.seed()               random                      # initialize random generator
     ${random_string}=           Generate Random String      1                           [NUMBERS]
@@ -158,6 +159,8 @@ Last Step of creation of Template
     RefreshPage
     Scroll                      //html                      page_up
 Steps For Edit Template
+    RefreshPage
+    RefreshPage
     ClickText                   Edit Template
 Edit MetadataRetrival
 
