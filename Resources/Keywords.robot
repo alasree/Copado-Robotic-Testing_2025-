@@ -458,6 +458,7 @@ Metadata Tranformation without Upload of file
     ClickElement                xpath=(//button[.//span[normalize-space(text())='Select an Option']])[2]
     VerifyText                  Note: Apex Script will execute last.
     ClickText                   Confirm
+    ClickText                   Next
 DataRestore Screen
     ClickElement                xpath=//span[@title="Users Information"]
     ClickElement                xpath=(//input[@data-navigation="enable"])[3]
@@ -465,11 +466,16 @@ DataRestore Screen
     Scroll                      //html                      down                        100
     VerifyText                  Total Records: 1
 Custom Settings
+    
     ClickElement                xpath=//span[@title="Custom Settings Information"]
     ClickElement                xpath=(//input[@type="search"])[2]
     WriteText                   Org
     ClickText                   Clear
     ClickElement                xpath=(//select[@class="slds-select"])[3]
+    ${scroll_distance}=         Set Variable                1000
+    FOR                         ${i}                        IN RANGE                    15
+        Scroll                  //html                      down                          ${scroll_distance}
+    END
 Scheduled Jobs
     ClickElement                xpath=//span[@title="Schedule Jobs Information"]
     Scroll                      //html                      up                          500
