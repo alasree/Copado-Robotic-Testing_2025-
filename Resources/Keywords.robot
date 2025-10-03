@@ -276,6 +276,7 @@ Editing the Users
     ClickItem                   Refresh
     RefreshPage
     ClickItem                   Refresh
+    ClickItem                   Refresh
     # VerifyText                Metadata Backup Completed
 Retrieve Data
     Clicktext                   Retrieve Data
@@ -298,7 +299,7 @@ Retrieve Data
     # ClickText                 25                          anchor=10
     HotKey                      down
     # ClickText                 10
-
+    ClickItem                   Refresh
 SearchBar for ApexClass
     ClickElement                xpath=(//input[@type="search"])[2]
     WriteText                   alasree
@@ -328,9 +329,9 @@ Searchbar For Users
     # Scroll                    //html                      page_up
     VerifyText                  No users found matching your search criteria.
     # VerifyText                No custom settings found matching your search criteria.
-    ClickElement                xpath=(//input[@type="search"])[3]
+    ClickElement                xpath=(//input[@type="search"])[4]
     ClickText                   Clear
-    ClickElement                xpath=(//input[@type="search"])[3]
+    ClickElement                xpath=(//input[@type="search"])[4]
 Serchbar for Custom_settings
     Scroll                      //html                      down                        100
     Scroll                      //html                      down                        100
@@ -342,9 +343,9 @@ Serchbar for Custom_settings
     # Scroll                    //html                      page_up
     # VerifyText                No users found matching your search criteria.
     # VerifyText                No custom settings found matching your search criteria.
-    ClickElement                xpath=(//input[@type="search"])[4]
+    ClickElement                xpath=(//input[@type="search"])[5]
     ClickText                   Clear
-    ClickElement                xpath=(//input[@type="search"])[4]
+    ClickElement                xpath=(//input[@type="search"])[5]
 Searchbar For ScheduledJobs
     Scroll                      //html                      down                        100
     Scroll                      //html                      down                        100
@@ -359,7 +360,7 @@ Searchbar For ScheduledJobs
     ClickElement                xpath=(//input[@type="search"])[5]
     WriteText                   sample
     ClickText                   clear
-SCREEN 2---SANDBOX REFRESH
+SCREEN 2 SANDBOX REFRESH
     ClickText                   Next                        anchor=Edit Template
     ClickElement                xpath=//button[.//span[text()="Select an Org"]]
     ClickText                   refreshqa1
