@@ -360,8 +360,8 @@ Searchbar For ScheduledJobs
     ClickElement                xpath=(//input[@type="search"])[5]
     WriteText                   sample
     ClickText                   clear
-SCREEN 2 SANDBOX REFRESH
     ClickText                   Next                        anchor=Edit Template
+SCREEN 2 SANDBOX REFRESH
     ClickElement                xpath=//button[.//span[text()="Select an Org"]]
     ClickText                   refreshqa1
     VerifyText                  All Active Users
