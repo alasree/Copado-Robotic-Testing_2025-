@@ -6,7 +6,9 @@ Library                         QWeb
 *** Variables ***
 # IMPORTANT: Please read the readme.txt to understand needed variables and how to handle them!!
 ${initial_sleep_time}           5
-${username}                     Vishnu.r@cloudfulcrum.com.refreshqa2
+# ${username}                     Vishnu.r@cloudfulcrum.com.refreshqa2
+# ${password}                    Cloud@1234
+${username}                     sharooq.a@cloudfulcrum.com 
 ${password}                    Cloud@1234
 ${login_url}                    https://test.salesforce.com                             # Salesforce instance. NOTE: Should be overwritten in CRT variables
 ${home_url}                     ${login_url}/lightning/page/home
