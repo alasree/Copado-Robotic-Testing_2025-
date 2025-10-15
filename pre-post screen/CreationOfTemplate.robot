@@ -74,9 +74,10 @@ Select And Authenticate Refresh Environment
     SCREEN 2 SANDBOX REFRESH
     MetadataRestore SCREEN
     Metadata Tranformation without Upload of file
-    DataRestore Screen
-    Scheduled Jobs
-    DeleteScheduledJobs
+    DataRestore Screen of Users
+    DataRestore Screen of Custom Settings
+    DataRestore Screen of Scheduled Jobs
+    DataRestore Screen of DeleteScheduledJobs
     User Transformation
     UserTranformation user Activate
     DataTranformation
