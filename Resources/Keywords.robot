@@ -484,21 +484,26 @@ DataRestore Screen of Scheduled Jobs
     ClickElement            xpath=//span[@title="Schedule Jobs Information"]
     Scroll                  //html                      up                          500
     ClickText                ${xpath_of_Scheduledjobs_Datarestore}
+    ScrollText               Delete Schedule Jobs Information
     WriteText               ala
     VerifyText              No schedule jobs found matching your search criteria.
     ClickText                ${xpath_of_Scheduledjobs_Datarestore}
-    ClickText               clear
+    ClickText               Clear
 DataRestore Screen of DeleteScheduledJobs
     clickElement            xpath=//span[@title="Delete Schedule Jobs Information"]
     VerifyText              Do you want to delete the Scheduled Jobs, Report Run, and Report Notifications that were copied from the source organization to the target after the sandbox refresh? If yes, click the Execute button and select the 'Delete Scheduled Jobs' checkbox.
+    ScrollText              Logs Information
     ClickText               Logs Information
+    ScrollText              Users
+    # ScrollText              Execute
+    SwipeUp                     2
     ClickText               Execute
     VerifyText              Select Items to Execute
-    VerifyText              Users (Select at least one user using 'Cherry Pick' to enable this option.)
-    ClickText               Cancel
+    # VerifyText              Users (Select at least one user using 'Cherry Pick' to enable this option.)
+    # ClickText               Cancel
     ClickText               Users Information
-    ClickElement            xpath=//span[text()='Select Item 2']/ancestor::td
-    ClickText               Execute
+    # ClickElement            xpath=//span[text()='Select Item 2']/ancestor::td
+    # ClickText               Execute
     # ClickText             Users
     ClickElement            xpath=//span[normalize-space(text())='Users']
     ClickElement            xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
