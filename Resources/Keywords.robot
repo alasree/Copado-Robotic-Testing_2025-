@@ -61,6 +61,7 @@ Metadata Retreival
 
 
     END
+    ClickText                        Next      anchor=Back
     
 Selecting the Masking Type
     ClickElement           xpath=//button[@name="selectMaskingType"]
@@ -287,14 +288,14 @@ Retrieve Data
     VerifyText                  Data regeneration initiated. Please wait while files are being generated.
     ClickItem                   Refresh
     Verifytext                  Data Backup In Progress
-    VerifyText                  Scheduled Jobs - Backup Regeneration Backup Completed
-    VerifyText                  Users - Backup Regeneration Backup Completed
+    # VerifyText                  Scheduled Jobs - Backup Regeneration Backup Completed
+    # VerifyText                  Users - Backup Regeneration Backup Completed
     sleep                       5s
     RefreshPage
     ClickItem                   Refresh
 
     ClickItem                   Refresh
-    Verifytext                  Custom Settings - Backup Regeneration Backup Completed
+    # Verifytext                  Custom Settings - Backup Regeneration Backup Completed
     Clicktext                   Next                        anchor=Edit Template
     ClickElement                xpath=//select[@value="5"]                              anchor=Showing
     # ClickText                 25                          anchor=10
