@@ -55,52 +55,9 @@ Select And Authenticate Refresh Environment
     ClickText                   Refresh a Sandbox
     ClickText                   Next
     Selection of Org Retreival
-
-
-Metadata Retreival
-
-    FOR                         ${Metadata_Type}            IN               @{Metadata_Types}
-
-        Log To Console          ${Metadata_Type}
-        ClickText               ${SelectMetadata}           timeout=10s
-        ClickText               ${Metadata_Type}            timeout=40s
-
-        Sleep                   3s
-        ${data_exists}=         Run Keyword And Return Status                VerifyText                  Search Metadata Components                timeout=3s
-        IF                      ${data_exists}
-        # Click Checkbox        Select All                  on               index=1                     timeout=20s
-        # # ClickText           Next                        anchor=Last
-        # # Click Checkbox      Select All                  on               index=1                     timeout=20s
-            ClickText           Select Item 1
-            ClickText           Select Item 2
-            ClickText           Select Item 3
-
-        ELSE
-            Log To Console      do nothing
-        END
-    END
-    ClickText                   Next                        anchor=Back
+    Metadata Retreival
     Selecting the Masking Type
-Select the Suffix Masking
-    ClickElement                xpath=//button[@name="selectMaskingType"]
-    ClickText                   Suffix
-    # ClickElement              xpath=//div[@data-value="CustomLabel"]
-    ClickElement                xpath=//span[@title="Custom Labels"]
-    ClickElement                xpath=//button[@title="Move to Selected"]
-    ClickElement                xpath=//div[@data-value="ConnectedApp"]
-    ClickElement                xpath=//button[@title="Move to Selected"]
-    ClickElement                xpath=//div[@data-value="CustomMetadata"]
-    ClickElement                xpath=//button[@title="Move to Selected"]
-    # sleep                     30s
-    ClickElement                xpath=//div[@data-value="EmailServicesFunction"]
-    ClickElement                xpath=//button[@title="Move to Selected"]
-    ClickElement                xpath=//div[@data-value="WorkflowAlert"]
-    ClickElement                xpath=//button[@title="Move to Selected"]
-    ClickElement                xpath=//input[@placeholder="Enter the suffix value..."]
-    WriteText                   .invalid
-    ClickElement                xpath=//button[@title="Create Rule"]
-
-    ClickElement                xpath=//button[@name="selectMaskingType"]
+    Select the Suffix Masking
     Select the ApexScript
     Selecting the users
     Selecting the Custom Settings
