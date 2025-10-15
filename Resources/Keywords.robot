@@ -326,7 +326,7 @@ SearchBar for ApexClass
 Searchbar For Users
     # ClickElement                xpath=(//input[@type="search"])[3]
     ClickText                    ${xpath_for_searchUsers}
-    WriteText                   OrgId__c
+    WriteText                   Testing
     # Scroll                    //html                      page_up
     VerifyText                  No users found matching your search criteria.
     # VerifyText                No custom settings found matching your search criteria.
