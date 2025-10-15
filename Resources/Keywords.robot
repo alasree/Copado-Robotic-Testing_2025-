@@ -453,22 +453,22 @@ Metadata Tranformation without Upload of file
     VerifyText              Note: Apex Script will execute last.
     ClickText               Confirm
     ClickText               Next
-DataRestore Screen
+DataRestore Screen of Users
     ClickElement            xpath=//span[@title="Users Information"]
     ClickElement            xpath=//label[normalize-space(text())='Search Users']/following-sibling::div//input[@type='search']
     # VerifyText              Selected Users
-    WritEText                 testcalss
+    WriteText                 testcalss
     VerifyText              No users found matching your search criteria.
     # Scroll                  //html                      down                        100
-    ClickElement            xpath=//label[normalize-space(text())='Search Users']/following-sibling::div//input[@type='search']
+    ClickText            ${xpath_of_Users_Datarestore}
     ClickText                Clear
     WriteText                 Biswa Mishra
     ScrollText               Custom Settings Information
     VerifyText              Total Records: 1  
-Custom Settings
+DataRestore Screen of Custom Settings
 
-    ClickElement            xpath=//span[@title="Custom Settings Information"]
-    ClickElement            xpath=(//input[@type="search"])[2]
+    ClickElement           xpath=//span[@title="Custom Settings Information"]
+    ClickText            ${xpath_of_customSetting_Datarestore}
     WriteText               Org
     ClickText               Clear
     ClickElement            xpath=(//select[@class="slds-select"])[3]
@@ -476,13 +476,13 @@ Custom Settings
     FOR                     ${i}                        IN RANGE                    15
         Scroll              //html                      down                        ${scroll_distance}
     END
-Scheduled Jobs
+DataRestore Screen of Scheduled Jobs
     ClickElement            xpath=//span[@title="Schedule Jobs Information"]
     Scroll                  //html                      up                          500
-    ClickElement            xpath=(//input[@type="search"])[3]
+    ClickText                ${xpath_of_Scheduledjobs_Datarestore}
     WriteText               ala
     VerifyText              No schedule jobs found matching your search criteria.
-DeleteScheduledJobs
+DataRestore Screen of DeleteScheduledJobs
     clickElement            xpath=//span[@title="Delete Schedule Jobs Information"]
     VerifyText              Do you want to delete the Scheduled Jobs, Report Run, and Report Notifications that were copied from the source organization to the target after the sandbox refresh? If yes, click the Execute button and select the 'Delete Scheduled Jobs' checkbox.
     ClickText               Logs Information
