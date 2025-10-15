@@ -318,16 +318,6 @@ SearchBar for ApexClass
     WriteText                   ALMController
     VerifyText                  ALMController
    ClickText                   Clear
-    # Scroll                    //html                      page_down
-    # Scroll                      //html                      down                        100
-    # Scroll                      //html                      down                        100
-    # Scroll                      //html                      down                        1500
-    # Scroll                      //html                      down                        1500
-    # Scroll                      //html                      down                        100
-    # Scroll                      //html                      down                        100
-    # Scroll                      //html                      down                        1500
-    # Scroll                      //html                      down
-    # Scroll                      //html                      down                        1500
     ${scroll_distance}=         Set Variable                1000
 
     FOR                         ${i}                        IN RANGE                    20
