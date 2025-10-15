@@ -453,6 +453,8 @@ Metadata Tranformation without Upload of file
     VerifyText              Note: Apex Script will execute last.
     ClickText               Confirm
     ClickText               Next
+    ScrollText               Schedule Jobs
+
 DataRestore Screen of Users
     ClickElement            xpath=//span[@title="Users Information"]
     ClickElement            xpath=//label[normalize-space(text())='Search Users']/following-sibling::div//input[@type='search']
@@ -471,17 +473,21 @@ DataRestore Screen of Custom Settings
     ClickText            ${xpath_of_customSetting_Datarestore}
     WriteText               Org
     ClickText               Clear
-    ClickElement            xpath=(//select[@class="slds-select"])[3]
-    ${scroll_distance}=     Set Variable                1000
-    FOR                     ${i}                        IN RANGE                    15
-        Scroll              //html                      down                        ${scroll_distance}
-    END
+    # ClickText            ${xpath_of_customSetting_Datarestore}
+    # ${scroll_distance}=     Set Variable                1000
+    # FOR                     ${i}                        IN RANGE                    15
+    #     Scroll              //html                      down                        ${scroll_distance}
+    # END
+
 DataRestore Screen of Scheduled Jobs
+    ScrollText            Schedule Jobs Information
     ClickElement            xpath=//span[@title="Schedule Jobs Information"]
     Scroll                  //html                      up                          500
     ClickText                ${xpath_of_Scheduledjobs_Datarestore}
     WriteText               ala
     VerifyText              No schedule jobs found matching your search criteria.
+    ClickText                ${xpath_of_Scheduledjobs_Datarestore}
+    ClickText               clear
 DataRestore Screen of DeleteScheduledJobs
     clickElement            xpath=//span[@title="Delete Schedule Jobs Information"]
     VerifyText              Do you want to delete the Scheduled Jobs, Report Run, and Report Notifications that were copied from the source organization to the target after the sandbox refresh? If yes, click the Execute button and select the 'Delete Scheduled Jobs' checkbox.
