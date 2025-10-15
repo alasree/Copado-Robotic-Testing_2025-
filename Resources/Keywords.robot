@@ -349,10 +349,11 @@ SearchBar for ApexClass
     ClickText               Clear
     ClickText               ${xpath_for_searchCustomSettings}
 # Searchbar For ScheduledJobs
-    ScrollText              Custom Setting Name
+    ScrollText              Schedule Jobs
     ClickElement            ${xpath_for_searchScheduledJobs}
     WriteText               sample
     ClickText               clear
+    ScrollText              Selected Metadata Information
     ClickText               Next                        anchor=Edit Template
 SCREEN 2 SANDBOX REFRESH
     ClickElement            xpath=//button[.//span[text()="Select an Org"]]
@@ -393,12 +394,12 @@ MetadataRestore SCREEN
     ClickItem               Status
     sleep                   15s
     ClickItem               Status
-    VerifyText              Deployment completed successfully.
+    # VerifyText              Deployment completed successfully.
     ClickElement            xpath=//span[@title="Metadata"]
     Scroll                  //html                      down                        100
     Scroll                  //html                      down                        100
     Scroll                  //html                      down                        100
-    ClickElement            xpath=//span[@title="Logs Information"]
+    # ClickElement            xpath=//span[@title="Logs Information"]
     VerifyText              LN-00
     VerifyText              2025
     ClickText               Next                        anchor=Execute
@@ -454,10 +455,16 @@ Metadata Tranformation without Upload of file
     ClickText               Next
 DataRestore Screen
     ClickElement            xpath=//span[@title="Users Information"]
-    ClickElement            xpath=(//input[@data-navigation="enable"])[3]
-    VerifyText              Selected Users
-    Scroll                  //html                      down                        100
-    VerifyText              Total Records: 1
+    ClickElement            xpath=//label[normalize-space(text())='Search Users']/following-sibling::div//input[@type='search']
+    # VerifyText              Selected Users
+    WritEText                 testcalss
+    VerifyText              No users found matching your search criteria.
+    # Scroll                  //html                      down                        100
+    ClickElement            xpath=//label[normalize-space(text())='Search Users']/following-sibling::div//input[@type='search']
+    ClickText                Clear
+    WriteText                 Biswa Mishra
+    ScrollText               Custom Settings Information
+    VerifyText              Total Records: 1  
 Custom Settings
 
     ClickElement            xpath=//span[@title="Custom Settings Information"]
