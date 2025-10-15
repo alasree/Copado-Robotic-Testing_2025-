@@ -308,7 +308,8 @@ Retrieve Data
     HotKey                      Enter
     ClickItem                   Refresh
 SearchBar for ApexClass
-    ClickElement                xpath=(//input[@type="search"])[2]
+    # ClickElement                xpath=(//input[@type="search"])[2]
+    ClickElement                   xpath=//label[normalize-space(text())="Search Metadata"]/following-sibling::div//input[@type="search"]
     WriteText                   alasree
     VerifyText                  No metadata components found matching your search criteria.
     ClickElement                xpath=(//input[@type="search"])[2]
