@@ -33,11 +33,11 @@ ${DeSELECT_ALL_CHECKBOX}    xpath=(//lightning-datatable//thead/tr/th[1]//input[
 
 @{Metadata_Masking}         Search & Replace            Suffix                Apex Script
 ${AccountCreation}          Account a = new Account();a.Name='TestingCRT';a.sales_owner__c = 'shalini';insert a;
-@{Custom_settings}          Select Item 1               Select Item 2         Select Item 3         Select Item 4    Select Item 5
-@{xpath_for_searchApexclass}        xpath=//label[normalize-space(text())="Search Metadata"]/following-sibling::div//input[@type="search"]        
-@{xpath_for_searchUsers}            xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
-@{xpath_for_searchCustomSettings}    xpath=//label[normalize-space(text())="Search Custom Settings"]/following-sibling::div//input[@type="search"]
-@{xpath_for_searchScheduledJobs}    xpath=//label[normalize-space(text())="Search Schedule Jobs"]/following-sibling::div//input[@type="search"]
+${Custom_settings}          Select Item 1               Select Item 2         Select Item 3         Select Item 4    Select Item 5
+${xpath_for_searchApexclass}        xpath=//label[normalize-space(text())="Search Metadata"]/following-sibling::div//input[@type="search"]        
+${xpath_for_searchUsers}            xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
+${xpath_for_searchCustomSettings}    xpath=//label[normalize-space(text())="Search Custom Settings"]/following-sibling::div//input[@type="search"]
+${xpath_for_searchScheduledJobs}    xpath=//label[normalize-space(text())="Search Schedule Jobs"]/following-sibling::div//input[@type="search"]
 
 
 
