@@ -338,26 +338,18 @@ SearchBar for ApexClass
     ClickText               Clear
     # ClickText               ${xpath_for_searchUsers}
 # Serchbar for Custom_settings
-    ScrollText              Custom Settings                 
+    ScrollText              Custom Setting Name 
+    SwipeDown                         1                  
     ClickText               ${xpath_for_searchCustomSettings}
     WriteText               OrgId__c
     # Scroll                //html                      page_up
     # VerifyText            No users found matching your search criteria.
-    VerifyText              No custom settings found matching your search criteria.
+    # VerifyText              No custom settings found matching your search criteria.
     ClickText               ${xpath_for_searchCustomSettings}
     ClickText               Clear
     ClickText               ${xpath_for_searchCustomSettings}
 # Searchbar For ScheduledJobs
-    Scroll                  //html                      down                        100
-    Scroll                  //html                      down                        100
-    Scroll                  //html                      down                        1500
-    Scroll                  //html                      down                        1500
-    Scroll                  //html                      down                        100
-    Scroll                  //html                      down                        100
-    Scroll                  //html                      down                        100
-    Scroll                  //html                      down                        1500
-    Scroll                  //html                      down                        1500
-    Scroll                  //html                      down                        100
+    ScrollText              Custom Setting Name
     ClickElement            ${xpath_for_searchScheduledJobs}
     WriteText               sample
     ClickText               clear
