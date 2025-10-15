@@ -312,7 +312,8 @@ SearchBar for ApexClass
     ClickElement                   xpath=//label[normalize-space(text())="Search Metadata"]/following-sibling::div//input[@type="search"]
     WriteText                   alasree
     VerifyText                  No metadata components found matching your search criteria.
-    ClickElement                xpath=(//input[@type="search"])[2]
+    ClickElement                   xpath=//label[normalize-space(text())="Search Metadata"]/following-sibling::div//input[@type="search"]
+    # ClickElement                xpath=(//input[@type="search"])[2]
     ClickText                   Clear
     WriteText                   ALMController
     VerifyText                  ALMController
@@ -338,9 +339,9 @@ Searchbar For Users
     # Scroll                    //html                      page_up
     VerifyText                  No users found matching your search criteria.
     # VerifyText                No custom settings found matching your search criteria.
-    ClickElement                xpath=(//input[@type="search"])[4]
+    ClickElement                xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
     ClickText                   Clear
-    ClickElement                xpath=(//input[@type="search"])[4]
+    ClickElement                xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
 Serchbar for Custom_settings
     Scroll                      //html                      down                        100
     Scroll                      //html                      down                        100
