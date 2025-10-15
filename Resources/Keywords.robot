@@ -318,7 +318,7 @@ SearchBar for ApexClass
     WriteText               ALMController
     VerifyText              ALMController
     ClickText               Clear
-    Sleep                   10s
+    # Sleep                   10s
     # ScrollList              direction=Bottom 
    
     # ${scroll_distance}=                               Set Variable                1000
@@ -336,13 +336,9 @@ SearchBar for ApexClass
     # VerifyText            No custom settings found matching your search criteria.
     ClickText               ${xpath_for_searchUsers}
     ClickText               Clear
-    ClickText               ${xpath_for_searchUsers}
-Serchbar for Custom_settings
-    Scroll                  //html                      down                        100
-    Scroll                  //html                      down                        100
-    Scroll                  //html                      down                        1500
-    Scroll                  //html                      down                        1500
-    Scroll                  //html                      down                        100
+    # ClickText               ${xpath_for_searchUsers}
+# Serchbar for Custom_settings
+    ScrollText              Custom Settings                 
     ClickText               ${xpath_for_searchCustomSettings}
     WriteText               OrgId__c
     # Scroll                //html                      page_up
@@ -351,7 +347,7 @@ Serchbar for Custom_settings
     ClickText               ${xpath_for_searchCustomSettings}
     ClickText               Clear
     ClickText               ${xpath_for_searchCustomSettings}
-Searchbar For ScheduledJobs
+# Searchbar For ScheduledJobs
     Scroll                  //html                      down                        100
     Scroll                  //html                      down                        100
     Scroll                  //html                      down                        1500
