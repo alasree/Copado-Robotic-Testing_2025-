@@ -318,6 +318,7 @@ SearchBar for ApexClass
     WriteText               ALMController
     VerifyText              ALMController
     ClickText               Clear
+    Sleep                   10s
     # ScrollList              direction=Bottom 
    
     # ${scroll_distance}=                               Set Variable                1000
@@ -325,9 +326,8 @@ SearchBar for ApexClass
     # FOR                   ${i}                        IN RANGE                    20
     #                       Scroll                      //html                      up                          ${scroll_distance}
     # END
-Searchbar For Users
-    #  ScrollText              User
-    SwipeDown                         1     
+    ScrollText              User
+    # SwipeDown                         1     
     # ClickElement          xpath=(//input[@type="search"])[3]
     ClickText               ${xpath_for_searchUsers}
     WriteText               Testing
