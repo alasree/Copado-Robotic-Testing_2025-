@@ -71,9 +71,6 @@ Select And Authenticate Refresh Environment
     Editing the Users
     Retrieve Data
     SearchBar for ApexClass
-    Searchbar For Users
-    Serchbar for Custom_settings
-    Searchbar For ScheduledJobs
     SCREEN 2 SANDBOX REFRESH
     MetadataRestore SCREEN
     Metadata Tranformation without Upload of file
