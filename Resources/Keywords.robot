@@ -326,7 +326,7 @@ SearchBar for ApexClass
 Searchbar For Users
     # ClickElement                xpath=(//input[@type="search"])[3]
     ClickText                    ${xpath_for_searchUsers}
-    WriteText                   OrgId__c----fcgvhbjn
+    WriteText                   OrgId__c
     # Scroll                    //html                      page_up
     VerifyText                  No users found matching your search criteria.
     # VerifyText                No custom settings found matching your search criteria.
@@ -339,11 +339,11 @@ Serchbar for Custom_settings
     Scroll                      //html                      down                        1500
     Scroll                      //html                      down                        1500
     Scroll                      //html                      down                        100
-    ClickText                @{xpath_for_searchCustomSettings} 
+    ClickText                ${xpath_for_searchCustomSettings} 
     WriteText                   OrgId__c
     # Scroll                    //html                      page_up
     # VerifyText                No users found matching your search criteria.
-    # VerifyText                No custom settings found matching your search criteria.
+     VerifyText                No custom settings found matching your search criteria.
     ClickText                ${xpath_for_searchCustomSettings} 
     ClickText                   Clear
     ClickText                ${xpath_for_searchCustomSettings} 
