@@ -317,6 +317,7 @@ SearchBar for ApexClass
     ClickText                   Clear
     WriteText                   ALMController
     VerifyText                  ALMController
+   ClickText                   Clear
     # Scroll                    //html                      page_down
     # Scroll                      //html                      down                        100
     # Scroll                      //html                      down                        100
