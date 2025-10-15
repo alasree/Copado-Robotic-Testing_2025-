@@ -38,6 +38,7 @@ Selection of Org Retreival
         Sleep              3s
     END
 Metadata Retreival
+    ClickElement        xpath=//button[@name="selectMetadata"]
 
     FOR                    ${Metadata_Type}            IN                          @{Metadata_Types}
 
