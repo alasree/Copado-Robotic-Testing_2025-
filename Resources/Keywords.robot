@@ -37,8 +37,9 @@ Selection of Org Retreival
         ClickText          ${ENV}
         Sleep              3s
     END
-Metadata Retreival
     ClickElement        xpath=//button[@name="selectMetadata"]
+Metadata Retreival
+    # ClickElement        xpath=//button[@name="selectMetadata"]
 
     FOR                    ${Metadata_Type}            IN                          @{Metadata_Types}
 
@@ -296,11 +297,15 @@ Retrieve Data
 
     ClickItem                   Refresh
     # Verifytext                  Custom Settings - Backup Regeneration Backup Completed
-    Clicktext                   Next                        anchor=Edit Template
+    # Clicktext                   Next                        anchor=Edit Template
     ClickElement                xpath=//select[@value="5"]                              anchor=Showing
     # ClickText                 25                          anchor=10
     HotKey                      down
-    # ClickText                 10
+    # ClickText                 10      anchor=25
+    # ClickElement                xpath=//select[@value="10"]
+    ClickElement                xpath=//select[@class='slds-select' and @value='10']
+    # ClickText 
+    HotKey                      Enter
     ClickItem                   Refresh
 SearchBar for ApexClass
     ClickElement                xpath=(//input[@type="search"])[2]
@@ -326,7 +331,8 @@ SearchBar for ApexClass
         Scroll                  //html                      up                        ${scroll_distance}
     END
 Searchbar For Users
-    ClickElement                xpath=(//input[@type="search"])[3]
+    # ClickElement                xpath=(//input[@type="search"])[3]
+    ClickElement                    xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
     WriteText                   OrgId__c----fcgvhbjn
     # Scroll                    //html                      page_up
     VerifyText                  No users found matching your search criteria.
