@@ -309,10 +309,10 @@ Retrieve Data
     ClickItem                   Refresh
 SearchBar for ApexClass
     # ClickElement                xpath=(//input[@type="search"])[2]
-    ClickElement                   xpath=//label[normalize-space(text())="Search Metadata"]/following-sibling::div//input[@type="search"]
+    ClickElement                @{xpath_for_searchApexclass} 
     WriteText                   alasree
     VerifyText                  No metadata components found matching your search criteria.
-    ClickElement                   xpath=//label[normalize-space(text())="Search Metadata"]/following-sibling::div//input[@type="search"]
+    ClickElement                 @{xpath_for_searchApexclass} 
     # ClickElement                xpath=(//input[@type="search"])[2]
     ClickText                   Clear
     WriteText                   ALMController
@@ -334,28 +334,28 @@ SearchBar for ApexClass
     END
 Searchbar For Users
     # ClickElement                xpath=(//input[@type="search"])[3]
-    ClickElement                    xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
+    ClickElement                    @{xpath_for_searchUsers}
     WriteText                   OrgId__c----fcgvhbjn
     # Scroll                    //html                      page_up
     VerifyText                  No users found matching your search criteria.
     # VerifyText                No custom settings found matching your search criteria.
-    ClickElement                xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
+    ClickElement                @{xpath_for_searchUsers}
     ClickText                   Clear
-    ClickElement                xpath=//label[normalize-space(text())="Search Users"]/following-sibling::div//input[@type="search"]
+    ClickElement                @{xpath_for_searchUsers}
 Serchbar for Custom_settings
     Scroll                      //html                      down                        100
     Scroll                      //html                      down                        100
     Scroll                      //html                      down                        1500
     Scroll                      //html                      down                        1500
     Scroll                      //html                      down                        100
-    ClickElement                xpath=(//input[@type="search"])[4]
+    ClickElement                @{xpath_for_searchCustomSettings} 
     WriteText                   OrgId__c
     # Scroll                    //html                      page_up
     # VerifyText                No users found matching your search criteria.
     # VerifyText                No custom settings found matching your search criteria.
-    ClickElement                xpath=(//input[@type="search"])[5]
+    ClickElement                @{xpath_for_searchCustomSettings} 
     ClickText                   Clear
-    ClickElement                xpath=(//input[@type="search"])[5]
+    ClickElement                @{xpath_for_searchCustomSettings} 
 Searchbar For ScheduledJobs
     Scroll                      //html                      down                        100
     Scroll                      //html                      down                        100
@@ -367,7 +367,7 @@ Searchbar For ScheduledJobs
     Scroll                      //html                      down                        1500
     Scroll                      //html                      down                        1500
     Scroll                      //html                      down                        100
-    ClickElement                xpath=(//input[@type="search"])[5]
+    ClickElement                @{xpath_for_searchScheduledJobs}
     WriteText                   sample
     ClickText                   clear
     ClickText                   Next                        anchor=Edit Template
