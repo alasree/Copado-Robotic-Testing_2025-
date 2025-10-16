@@ -318,16 +318,16 @@ SearchBar for ApexClass
     WriteText               ALMController
     VerifyText              ALMController
     ClickText               Clear
-    # Sleep                   10s
-    # ScrollList              direction=Bottom 
-   
+    # Sleep                 10s
+    # ScrollList            direction=Bottom
+
     # ${scroll_distance}=                               Set Variable                1000
 
     # FOR                   ${i}                        IN RANGE                    20
     #                       Scroll                      //html                      up                          ${scroll_distance}
     # END
     ScrollText              User
-    # SwipeDown                         1     
+    # SwipeDown             1
     # ClickElement          xpath=(//input[@type="search"])[3]
     ClickText               ${xpath_for_searchUsers}
     WriteText               Testing
@@ -336,19 +336,19 @@ SearchBar for ApexClass
     # VerifyText            No custom settings found matching your search criteria.
     ClickText               ${xpath_for_searchUsers}
     ClickText               Clear
-    # ClickText               ${xpath_for_searchUsers}
-# Serchbar for Custom_settings
-    ScrollText              Custom Setting Name 
-    SwipeDown                         1                  
+    # ClickText             ${xpath_for_searchUsers}
+    # Serchbar for Custom_settings
+    ScrollText              Custom Setting Name
+    SwipeDown               1
     ClickText               ${xpath_for_searchCustomSettings}
     WriteText               OrgId__c
     # Scroll                //html                      page_up
     # VerifyText            No users found matching your search criteria.
-    # VerifyText              No custom settings found matching your search criteria.
+    # VerifyText            No custom settings found matching your search criteria.
     ClickText               ${xpath_for_searchCustomSettings}
     ClickText               Clear
     ClickText               ${xpath_for_searchCustomSettings}
-# Searchbar For ScheduledJobs
+    # Searchbar For ScheduledJobs
     ScrollText              Schedule Jobs
     ClickElement            ${xpath_for_searchScheduledJobs}
     WriteText               sample
@@ -394,12 +394,12 @@ MetadataRestore SCREEN
     ClickItem               Status
     sleep                   15s
     ClickItem               Status
-    # VerifyText              Deployment completed successfully.
+    # VerifyText            Deployment completed successfully.
     ClickElement            xpath=//span[@title="Metadata"]
     Scroll                  //html                      down                        100
     Scroll                  //html                      down                        100
     Scroll                  //html                      down                        100
-    # ClickElement            xpath=//span[@title="Logs Information"]
+    # ClickElement          xpath=//span[@title="Logs Information"]
     VerifyText              LN-00
     VerifyText              2025
     ClickText               Next                        anchor=Execute
@@ -453,41 +453,41 @@ Metadata Tranformation without Upload of file
     VerifyText              Note: Apex Script will execute last.
     ClickText               Confirm
     ClickText               Next
-    ScrollText               Schedule Jobs
+    ScrollText              Schedule Jobs
 
 DataRestore Screen of Users
     ClickElement            xpath=//span[@title="Users Information"]
     ClickElement            xpath=//label[normalize-space(text())='Search Users']/following-sibling::div//input[@type='search']
-    # VerifyText              Selected Users
-    WriteText                 testcalss
+    # VerifyText            Selected Users
+    WriteText               testcalss
     VerifyText              No users found matching your search criteria.
-    # Scroll                  //html                      down                        100
-    ClickText            ${xpath_of_Users_Datarestore}
-    ClickText                Clear
-    WriteText                 Biswa Mishra
-    ScrollText               Custom Settings Information
-    VerifyText              Total Records: 1  
+    # Scroll                //html                      down                        100
+    ClickText               ${xpath_of_Users_Datarestore}
+    ClickText               Clear
+    WriteText               Biswa Mishra
+    ScrollText              Custom Settings Information
+    VerifyText              Total Records: 1
 DataRestore Screen of Custom Settings
 
-    ClickElement           xpath=//span[@title="Custom Settings Information"]
-    ClickText            ${xpath_of_customSetting_Datarestore}
+    ClickElement            xpath=//span[@title="Custom Settings Information"]
+    ClickText               ${xpath_of_customSetting_Datarestore}
     WriteText               Org
     ClickText               Clear
-    # ClickText            ${xpath_of_customSetting_Datarestore}
-    # ${scroll_distance}=     Set Variable                1000
-    # FOR                     ${i}                        IN RANGE                    15
-    #     Scroll              //html                      down                        ${scroll_distance}
+    # ClickText             ${xpath_of_customSetting_Datarestore}
+    # ${scroll_distance}=                               Set Variable                1000
+    # FOR                   ${i}                        IN RANGE                    15
+    #                       Scroll                      //html                      down                        ${scroll_distance}
     # END
 
 DataRestore Screen of Scheduled Jobs
-    ScrollText            Schedule Jobs Information
+    ScrollText              Schedule Jobs Information
     ClickElement            xpath=//span[@title="Schedule Jobs Information"]
     Scroll                  //html                      up                          500
-    ClickText                ${xpath_of_Scheduledjobs_Datarestore}
-    ScrollText               Delete Schedule Jobs Information
+    ClickText               ${xpath_of_Scheduledjobs_Datarestore}
+    ScrollText              Delete Schedule Jobs Information
     WriteText               ala
     VerifyText              No schedule jobs found matching your search criteria.
-    ClickText                ${xpath_of_Scheduledjobs_Datarestore}
+    ClickText               ${xpath_of_Scheduledjobs_Datarestore}
     ClickText               Clear
 DataRestore Screen of DeleteScheduledJobs
     clickElement            xpath=//span[@title="Delete Schedule Jobs Information"]
@@ -495,15 +495,20 @@ DataRestore Screen of DeleteScheduledJobs
     ScrollText              Logs Information
     ClickText               Logs Information
     ScrollText              Users
-    # ScrollText              Execute
-    SwipeUp                     2
+    # ScrollText            Execute
+    SwipeUp                 2
     ClickText               Execute
     VerifyText              Select Items to Execute
-    # VerifyText              Users (Select at least one user using 'Cherry Pick' to enable this option.)
-    # ClickText               Cancel
+    # VerifyText            Users (Select at least one user using 'Cherry Pick' to enable this option.)
+    # ClickText             Cancel
     ClickText               Users Information
-    # ClickElement            xpath=//span[text()='Select Item 2']/ancestor::td
-    # ClickText               Execute
+    ClickText               Custom Settings
+    ClickText               Delete Schedule Jobs anchor=Delete
+    #                       ${xpath_of_Excute_Schedule_jobs}                        xpath=//label[contains(@class, 'slds-checkbox__label') and .//span[text()='Schedule Jobs']]
+    ClickText               ${xpath_of_Excute_Schedule_jobs}
+    ClickText               Schedule Jobs
+    # ClickElement          xpath=//span[text()='Select Item 2']/ancestor::td
+    # ClickText             Execute
     # ClickText             Users
     ClickElement            xpath=//span[normalize-space(text())='Users']
     ClickElement            xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
