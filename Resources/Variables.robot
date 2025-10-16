@@ -43,5 +43,6 @@ ${xpath_of_Users_Datarestore}       xpath=//label[normalize-space(text())='Searc
 ${xpath_of_customSetting_Datarestore}    xpath=//label[normalize-space(text())='Search Custom Settings']/following-sibling::div//input[@type='search']
 ${xpath_of_Scheduledjobs_Datarestore}    xpath=//label[normalize-space(text())='Search Schedule Jobs']/following-sibling::div//input[@type='search']
 # ${xpath_of_delScheduledjobs_Datarestore} xpath=
+${xpath_of_Excute_Schedule_jobs}        xpath=//label[contains(@class, 'slds-checkbox__label') and .//span[text()='Schedule Jobs']]
 
 
