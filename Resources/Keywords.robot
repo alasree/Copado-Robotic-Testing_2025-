@@ -503,13 +503,9 @@ DataRestore Screen of DeleteScheduledJobs
     # ClickText             Cancel
     ClickText               Users Information
     ClickText               Custom Settings
-    ClickText               Delete Schedule Jobs anchor=Delete
-    #                       ${xpath_of_Excute_Schedule_jobs}                        xpath=//label[contains(@class, 'slds-checkbox__label') and .//span[text()='Schedule Jobs']]
+    ClickText               Delete Schedule Jobs 
     ClickText               ${xpath_of_Excute_Schedule_jobs}
     ClickText               Schedule Jobs
-    # ClickElement          xpath=//span[text()='Select Item 2']/ancestor::td
-    # ClickText             Execute
-    # ClickText             Users
     ClickElement            xpath=//span[normalize-space(text())='Users']
     ClickElement            xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
     # <span part="label" lwc-16hle61jt7i="" class="slds-form-element__label">Delete Schedule Jobs</span>
