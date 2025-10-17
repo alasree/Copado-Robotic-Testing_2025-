@@ -45,4 +45,5 @@ ${xpath_of_Scheduledjobs_Datarestore}    xpath=//label[normalize-space(text())='
 # ${xpath_of_delScheduledjobs_Datarestore} xpath=
 ${xpath_of_Excute_Schedule_jobs}        xpath=//label[contains(@class, 'slds-checkbox__label') and .//span[text()='Schedule Jobs']]
 ${Xpath_for_Start_Refresh_sandboxrRefresh}    xpath=//button[normalize-space(text())='Start Refresh']
-
+${Search_in_Fields_Masking}                xpath=(//div[@part='input-text'][.//label[normalize-space()='Search Fields']])[2]//input[@type='search']
+${Selecting_option1_usertransformation}     xpath=//label[span[text()='Select Item 1']]/preceding-sibling::input[@type='checkbox']
