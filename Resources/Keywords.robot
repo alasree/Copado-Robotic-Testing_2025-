@@ -300,12 +300,12 @@ Retrieve Data
     # Clicktext             Next                        anchor=Edit Template
     ClickElement            xpath=//select[@value="5"]                              anchor=Showing
     # ClickText             25                          anchor=10
-    QVision.HotKey          down
+    HotKey                  down
     # ClickText             10                          anchor=25
     # ClickElement          xpath=//select[@value="10"]
     ClickElement            xpath=//select[@class='slds-select' and @value='10']
     # ClickText
-    QVision.HotKey          Enter
+    HotKey                  Enter
     ClickItem               Refresh
 SearchBar for ApexClass
     # ClickElement          xpath=(//input[@type="search"])[2]
