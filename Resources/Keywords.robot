@@ -548,8 +548,10 @@ User Transformation
     ScrollText              Logs Information                   down                        1000
     VerifyText               Latest Users Deactivation Log   
 UserTranformation user Activate
-    ScrollText                All Users
-    
+    ScrollText                Selected Target Org    
+    ScrollList                 direction=top
+# Scroll (page) down 3 times in a list
+    Repeat Keyword     3 times    ScrollList    direction=up
     VerifyText              false
     ClickElement            xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
     ClickElement            xpath=//div[@id='dropdown-element-880']
