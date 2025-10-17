@@ -532,35 +532,6 @@ DataRestore Screen of DeleteScheduledJobs
     GetText                 Custom Settings
     VerifyText              An Email is triggered on the execution of Schedule jobs and Deleted Scheduled jobs with respective status.
     ClickText               Next                           anchor=Execute
-User Transformation
-    # it is the xpath to select the whole table
-    #                       ClickElement                xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
-    ClickElement            xpath=//label[span[text()='Select Item 1']]/preceding-sibling::input[@type='checkbox']
-
-    ClickText    Deactivate
-    ClickText    OK
-    # Scroll                  //html                      down                        1000
-    ClickText               Deactivate
-    VerifyText              Deactivate these users?
-    ClickText               OK
-    GetText                 Deactivation initiated for 1 users
-    ClickText               Status
-    # GetText                 User Deactivation
-    ClickText               Status
-    Scroll                  //html  
-    ScrollText              Logs Information                   down                        1000
-    VerifyText               Latest Users Deactivation Log   
-UserTranformation user Activate
-    ScrollText                Selected Target Org    up                        1000
-#     ScrollList                 direction=up
-# # Scroll (page) down 3 times in a list
-#     Repeat Keyword     10 times    ScrollList    direction=up
-    VerifyText              false
-    # ClickElement           xpath=//a[.//span[@title='Profile']] 
-    ClickElement            xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
-    #  ClickElement            xpath=//div[@id='dropdown-element-880']
-     ClickElement            xpath=//button[@title="Activate"]
-    ClickText               Next                        anchor=Execute
 DataTranformation
     VerifyText              Data Transformation
     ClickElement            xpath=//button[@name="selectObjectList"]
@@ -611,6 +582,35 @@ DataTranformation
     FOR                     ${i}                        IN RANGE                    10
         Scroll              //html                      up                          ${scroll_distance}
     END
+User Transformation
+    # it is the xpath to select the whole table
+    #                       ClickElement                xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
+    ClickElement            xpath=//label[span[text()='Select Item 1']]/preceding-sibling::input[@type='checkbox']
+    ClickText    Deactivate
+    ClickText    OK
+    # Scroll                  //html                      down                        1000
+    ClickText               Deactivate
+    VerifyText              Deactivate these users?
+    ClickText               OK
+    GetText                 Deactivation initiated for 1 users
+    ClickText               Status
+    # GetText                 User Deactivation
+    ClickText               Status
+    Scroll                  //html  
+    ScrollText              Logs Information                   down                        1000
+    VerifyText               Latest Users Deactivation Log   
+UserTranformation user Activate
+    ScrollText                Selected Target Org    up                        1000
+#     ScrollList                 direction=up
+# # Scroll (page) down 3 times in a list
+#     Repeat Keyword     10 times    ScrollList    direction=up
+    VerifyText              false
+    # ClickElement           xpath=//a[.//span[@title='Profile']] 
+    ClickElement            xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
+    #  ClickElement            xpath=//div[@id='dropdown-element-880']
+     ClickElement            xpath=//button[@title="Activate"]
+    ClickText               Next                        anchor=Execute
+
 second DataTranformation
     #                       VerifyText                  Data Transformation
     #                       ClickElement                xpath=//button[@name="selectObjectList"]
