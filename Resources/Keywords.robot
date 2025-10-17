@@ -498,40 +498,40 @@ DataRestore Screen of DeleteScheduledJobs
     # ScrollText            Execute
     SwipeUp                 2
     ClickText               Execute
-    # VerifyText              Select Items to Execute
+    # VerifyText            Select Items to Execute
     # VerifyText            Users (Select at least one user using 'Cherry Pick' to enable this option.)
     # ClickText             Cancel
     ClickText               Users Information
     ClickText               Custom Settings
-    ClickText               Delete Schedule Jobs 
+    ClickText               Delete Schedule Jobs
     ClickText               ${xpath_of_Excute_Schedule_jobs}
     ClickText               Schedule Jobs
-    # ClickElement            xpath=//span[normalize-space(text())='Users']
-    # ClickElement            xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
+    # ClickElement          xpath=//span[normalize-space(text())='Users']
+    # ClickElement          xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
     # <span part="label" lwc-16hle61jt7i="" class="slds-form-element__label">Delete Schedule Jobs</span>
-    # ClickElement            xpath=//span[normalize-space(text())='Delete Schedule Jobs']
-    # ClickElement            xpath=//span[normalize-space(text())='Schedule Jobs']
+    # ClickElement          xpath=//span[normalize-space(text())='Delete Schedule Jobs']
+    # ClickElement          xpath=//span[normalize-space(text())='Schedule Jobs']
     ClickText               Execute
-    # VerifyText              Execution started. Please wait. Refresh icon will appear after logs are generated.
-    # VerifyText              Logs are being generated. Please stay on this page—refresh icon will appear soon.
+    # VerifyText            Execution started. Please wait. Refresh icon will appear after logs are generated.
+    # VerifyText            Logs are being generated. Please stay on this page—refresh icon will appear soon.
     RefreshPage
     ClickText               Next                        anchor=Edit Template
-     ClickText               Next                        anchor=Start Refresh
-    # ClickText               Next                        anchor=${Xpath_for_Start_Refresh_sandboxrRefresh}
+    ClickText               Next                        anchor=Start Refresh
+    # ClickText             Next                        anchor=${Xpath_for_Start_Refresh_sandboxrRefresh}
     ClickText               Next                        anchor=Execute
     ClickText               Next                        anchor=Execute
     ClickText               Status
-    # GetText                 Custom Settings Restoration
-    # GetText                 User Restoration
+    # GetText               Custom Settings Restoration
+    # GetText               User Restoration
     ClickText               Status
-    # VerifyText              Custom Settings Restoration
+    # VerifyText            Custom Settings Restoration
     ClickText               Logs Information
     VerifyText              Users
     VerifyText              LN-0
     ClickText               Status
     GetText                 Custom Settings
     VerifyText              An Email is triggered on the execution of Schedule jobs and Deleted Scheduled jobs with respective status.
-    ClickText               Next                           anchor=Execute
+    ClickText               Next                        anchor=Execute
 DataTranformation
     VerifyText              Data Transformation
     ClickElement            xpath=//button[@name="selectObjectList"]
@@ -558,11 +558,12 @@ DataTranformation
     FOR                     ${i}                        IN RANGE                    5
         Scroll              //html                      down                        ${scroll_distance}
     END
-    ClickElement            xpath=(//input[@type="search"])[3]
-    WriteText               Oppo
+    # ClickElement          xpath=(//input[@type="search"])[3]
+    ClickText               ${Search_in_Fields_Masking}                             WriteText                   Accoun
     VerifyText              No fields found for the selected data type.
     ClickText               Clear
-    ClickElement            xpath=(//input[@type="search"])[3]
+    # ClickElement          xpath=(//input[@type="search"])[3]
+    ClickText               ${Search_in_Fields_Masking}
     WriteText               Description
     ${scroll_distance}=     Set Variable                1000
 
@@ -575,7 +576,7 @@ DataTranformation
     VerifyText              Data Transformation initiated successfully.
     ClickText               Status
     # Click Status button while it exists
-    ClickItemWhile          Status                      element=True                timeout=10s                 interval=2s
+    # ClickItemWhile        Status                      element=True                timeout=10s                 interval=2s
 
     VerifyText              Success
     ${scroll_distance}=     Set Variable                1000
@@ -585,30 +586,27 @@ DataTranformation
 User Transformation
     # it is the xpath to select the whole table
     #                       ClickElement                xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
-    ClickElement            xpath=//label[span[text()='Select Item 1']]/preceding-sibling::input[@type='checkbox']
-    ClickText    Deactivate
-    ClickText    OK
-    # Scroll                  //html                      down                        1000
+    ClickText               ${Selecting_option1_usertransformation}
+    ClickText               Deactivate
+    ClickText               OK
+    # Scroll                //html                      down                        1000
     ClickText               Deactivate
     VerifyText              Deactivate these users?
     ClickText               OK
     GetText                 Deactivation initiated for 1 users
     ClickText               Status
-    # GetText                 User Deactivation
+    # GetText               User Deactivation
     ClickText               Status
-    Scroll                  //html  
-    ScrollText              Logs Information                   down                        1000
-    VerifyText               Latest Users Deactivation Log   
+    Scroll                  //html
+    ScrollText              Logs Information            down                        1000
+    VerifyText              Latest Users Deactivation Log
 UserTranformation user Activate
-    ScrollText                Selected Target Org    up                        1000
-#     ScrollList                 direction=up
-# # Scroll (page) down 3 times in a list
-#     Repeat Keyword     10 times    ScrollList    direction=up
+    ScrollText              Selected Target Org         up                          1000
     VerifyText              false
-    # ClickElement           xpath=//a[.//span[@title='Profile']] 
+    # ClickElement          xpath=//a[.//span[@title='Profile']]
     ClickElement            xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
-    #  ClickElement            xpath=//div[@id='dropdown-element-880']
-     ClickElement            xpath=//button[@title="Activate"]
+    #                       ClickElement                xpath=//div[@id='dropdown-element-880']
+    ClickElement            xpath=//button[@title="Activate"]
     ClickText               Next                        anchor=Execute
 
 second DataTranformation
@@ -652,4 +650,3 @@ Related
     ClickText               View All
     ClickElement            xpath=//a[starts-with(text(), 'RefreshTemplate_')]
 
-   
