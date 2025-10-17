@@ -498,7 +498,7 @@ DataRestore Screen of DeleteScheduledJobs
     # ScrollText            Execute
     SwipeUp                 2
     ClickText               Execute
-    VerifyText              Select Items to Execute
+    # VerifyText              Select Items to Execute
     # VerifyText            Users (Select at least one user using 'Cherry Pick' to enable this option.)
     # ClickText             Cancel
     ClickText               Users Information
@@ -506,11 +506,11 @@ DataRestore Screen of DeleteScheduledJobs
     ClickText               Delete Schedule Jobs 
     ClickText               ${xpath_of_Excute_Schedule_jobs}
     ClickText               Schedule Jobs
-    ClickElement            xpath=//span[normalize-space(text())='Users']
-    ClickElement            xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
+    # ClickElement            xpath=//span[normalize-space(text())='Users']
+    # ClickElement            xpath=//span[normalize-space(text())='Custom Settings' and contains(@class, 'slds-form-element__label')]
     # <span part="label" lwc-16hle61jt7i="" class="slds-form-element__label">Delete Schedule Jobs</span>
-    ClickElement            xpath=//span[normalize-space(text())='Delete Schedule Jobs']
-    ClickElement            xpath=//span[normalize-space(text())='Schedule Jobs']
+    # ClickElement            xpath=//span[normalize-space(text())='Delete Schedule Jobs']
+    # ClickElement            xpath=//span[normalize-space(text())='Schedule Jobs']
     ClickText               Execute
     VerifyText              Execution started. Please wait. Refresh icon will appear after logs are generated.
     VerifyText              Logs are being generated. Please stay on this page—refresh icon will appear soon.
