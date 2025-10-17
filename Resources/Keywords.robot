@@ -512,11 +512,12 @@ DataRestore Screen of DeleteScheduledJobs
     # ClickElement            xpath=//span[normalize-space(text())='Delete Schedule Jobs']
     # ClickElement            xpath=//span[normalize-space(text())='Schedule Jobs']
     ClickText               Execute
-    VerifyText              Execution started. Please wait. Refresh icon will appear after logs are generated.
-    VerifyText              Logs are being generated. Please stay on this page—refresh icon will appear soon.
+    # VerifyText              Execution started. Please wait. Refresh icon will appear after logs are generated.
+    # VerifyText              Logs are being generated. Please stay on this page—refresh icon will appear soon.
     RefreshPage
     ClickText               Next                        anchor=Edit Template
-    ClickText               Next                        anchor=Start refresh
+    # ClickText               Next                        anchor=Start refresh
+    ClickText               Next                        anchor=${Xpath_for_Start_Refresh_sandboxrRefresh}
     ClickText               Next                        anchor=Execute
     ClickText               Next                        anchor=Execute
     ClickText               Status
