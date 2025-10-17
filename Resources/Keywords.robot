@@ -536,26 +536,30 @@ User Transformation
     # it is the xpath to select the whole table
     #                       ClickElement                xpath=//input[@type='checkbox' and @id=//label[span[normalize-space(text())='Select All']]/@for]
     ClickElement            xpath=//label[span[text()='Select Item 1']]/preceding-sibling::input[@type='checkbox']
+
+    ClickText    Deactivate
+    ClickText    OK
     # Scroll                  //html                      down                        1000
     ClickText               Deactivate
     VerifyText              Deactivate these users?
     ClickText               OK
     GetText                 Deactivation initiated for 1 users
     ClickText               Status
-    GetText                 User Deactivation
+    # GetText                 User Deactivation
     ClickText               Status
     Scroll                  //html  
     ScrollText              Logs Information                   down                        1000
     VerifyText               Latest Users Deactivation Log   
 UserTranformation user Activate
     ScrollText                Selected Target Org    up                        1000
-    ScrollList                 direction=up
-# Scroll (page) down 3 times in a list
-    Repeat Keyword     10 times    ScrollList    direction=up
+#     ScrollList                 direction=up
+# # Scroll (page) down 3 times in a list
+#     Repeat Keyword     10 times    ScrollList    direction=up
     VerifyText              false
-    ClickElement           xpath=//a[.//span[@title='Profile']] 
+    # ClickElement           xpath=//a[.//span[@title='Profile']] 
     ClickElement            xpath=//input[@id=//label[span[normalize-space(text())='Select Item 3']]/@for]
-    ClickElement            xpath=//div[@id='dropdown-element-880']
+    #  ClickElement            xpath=//div[@id='dropdown-element-880']
+     ClickElement            xpath=//button[@title="Activate"]
     ClickText               Next                        anchor=Execute
 DataTranformation
     VerifyText              Data Transformation
@@ -647,3 +651,5 @@ Related
     VerifyText              View All
     ClickText               View All
     ClickElement            xpath=//a[starts-with(text(), 'RefreshTemplate_')]
+
+   
