@@ -405,11 +405,7 @@ MetadataRestore SCREEN
     VerifyText                  2025
     ClickText                   Next                        anchor=Execute
 Metadata Transformation Screen
-    # Scroll                    //html                      up                          100
-    # Scroll                    //html                      up                          100
-    # Scroll                    //html                      up                          100
     Scroll                      //html                      down                        500
-    # VerifyText                ${ENV}
     ClickElement                xpath=//span[@title="Search and Replace Rules"]
     ClickElement                xpath=(//span[contains(@class, 'slds-file-selector__button')])[1]
     QVision.ClickText                  pre-post screen 
@@ -419,7 +415,7 @@ Metadata Transformation Screen
     QVision.ClickText                   Search13.csv                    
     QVision.ClickText           Open                                               anchor=Cancel
     ScrollText                  Suffix Rules
-    # # https://github.com/alasree/Copado-Robotic-Testing_2025-/blob/main/Resources/search13.csv
+
 MetadataTranformation for Suffix Rules
     
     ClickElement                xpath=//span[@Title="Suffix Rules"]
