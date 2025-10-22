@@ -6,6 +6,7 @@ Library                         QForce
 Library                         DateTime
 Library                         QWeb
 Library                         String
+Library                           QVision
 
 *** Variables ***
 # ${NoMetadataMsg}              No data available for the selected metadata type in the org.
@@ -409,30 +410,31 @@ Metadata Transformation Screen
     # Scroll                    //html                      up                          100
     Scroll                      //html                      down                        500
     # VerifyText                ${ENV}
-    # ClickElement                xpath=//span[@title="Search and Replace Rules"]
-    # ClickElement                xpath=(//span[contains(@class, 'slds-file-selector__button')])[1]
-    # UploadFile                Upload Files                .xlsx
-    # ${uploadforSearchrules}                               Set Variable                C:\Users\alasree.b\Downloads\search13.csv
-    # UploadFile                Upload Files                ${uploadforSearchrules}
-    #                           ${relative_path}            Set Variable                Test/../Data/PO.pdf
-    # ${uploadforSearchrules}     Set Variable                ${CURDIR}/Resources/../main/search13.csv
+    ClickElement                xpath=//span[@title="Search and Replace Rules"]
+    ClickElement                xpath=(//span[contains(@class, 'slds-file-selector__button')])[1]
+    QVision.DoubleClick                  Resources                   
+    UploadFile                Upload Files                .xlsx
+    ${uploadforSearchrules}                               Set Variable                C:\Users\alasree.b\Downloads\search13.csv
+    UploadFile                Upload Files                ${uploadforSearchrules}
+                              ${relative_path}            Set Variable                Test/../Data/PO.pdf
+    ${uploadforSearchrules}     Set Variable                ${CURDIR}/Resources/../main/search13.csv
 
-    # pre-post screen
-    # UploadFile                  Upload Files                ${uploadforSearchrules}
+    pre-post screen
+    UploadFile                  Upload Files                ${uploadforSearchrules}
 
-    # Verify file exists first
-    # ${file_path}=               Normalize Path              ${CURDIR}/Resources/main/search13.csv
-    # ${file_path}=               Normalize Path              ${CURDIR}/main/Resources/search13.csv
-    # File Should Exist           ${file_path}
-    # ${xpath_of_iploadfile}      xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
+    Verify file exists first
+    ${file_path}=               Normalize Path              ${CURDIR}/Resources/main/search13.csv
+    ${file_path}=               Normalize Path              ${CURDIR}/main/Resources/search13.csv
+    File Should Exist           ${file_path}
+    ${xpath_of_iploadfile}      xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 
-    # ${uploadforSearchrules}=    Set Variable                ${CURDIR}/Resources/search13.csv
-    # UploadFile                  ${xpath_of_iploadfile}      ${CURDIR}/Resources/search13.csv
-    # # Set QWeb base path and use relative path
-    # Set Variable                $image_path                 ${CURDIR}
-    # ${uploadforSearchrules}=    Set Variable                search13.csv
-    # File Should Exist           ${CURDIR}${/}${uploadforSearchrules}
-    # UploadFile                  Upload Files                ${uploadforSearchrules}
+    ${uploadforSearchrules}=    Set Variable                ${CURDIR}/Resources/search13.csv
+    UploadFile                  ${xpath_of_iploadfile}      ${CURDIR}/Resources/search13.csv
+    # Set QWeb base path and use relative path
+    Set Variable                $image_path                 ${CURDIR}
+    ${uploadforSearchrules}=    Set Variable                search13.csv
+    File Should Exist           ${CURDIR}${/}${uploadforSearchrules}
+    UploadFile                  Upload Files                ${uploadforSearchrules}
 
 
     # # https://github.com/alasree/Copado-Robotic-Testing_2025-/blob/main/Resources/search13.csv
