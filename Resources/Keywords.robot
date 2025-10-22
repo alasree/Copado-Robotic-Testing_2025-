@@ -415,9 +415,22 @@ Metadata Transformation Screen
     QVision.ClickText                  pre-post screen 
     QVision.ClickText                  Suite
     QVision.DoubleClick                  Resources
-    HotKey                        down
+    # HotKey                        down
+    QVision.ClickText                   Search13.csv                    
     QVision.ClickText           Open                                               anchor=Cancel
+    ScrollText                  Suffix Rules
     # # https://github.com/alasree/Copado-Robotic-Testing_2025-/blob/main/Resources/search13.csv
+MetadataTranformation for Suffix Rules
+    
+    ClickElement                xpath=//span[@Title="Suffix Rules"]
+    ClickElement                xpath=(//span[contains(@class, 'slds-file-selector__button')])[2]
+    QVision.ClickText                  pre-post screen 
+    QVision.ClickText                  Suite
+    QVision.DoubleClick                  Resources
+    HotKey                        down
+    QVision.ClickText             suffix_Template.csv
+    QVision.ClickText           Open                                               anchor=Cancel
+
 
 Metadata Tranformation without Upload of file
     ClickElement                xpath=//span[@title="Search and Replace Rules"]
