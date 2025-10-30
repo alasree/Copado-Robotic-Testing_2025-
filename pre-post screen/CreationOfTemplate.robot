@@ -44,7 +44,7 @@ Select And Authenticate Refresh Environment
     [Tags]                      RefreshFlow
 
     # Step 1: Launch refresh flow in the application
-     Appstate                    Home
+    #  Appstate                    Home
     # Sleep                     10
     # GoTo                      https://test.salesforce.com
     # TypeText                  username                    Vishnu.r@cloudfulcrum.com.refreshqa2
