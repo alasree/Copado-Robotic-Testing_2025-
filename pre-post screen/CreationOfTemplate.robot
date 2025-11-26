@@ -36,15 +36,15 @@ ${users_Empty}                  No User data available for the selected data typ
 ${xpath_of_iploadfile}          xpath=(//span[contains(@class, 'slds-file-selector__text') and contains(@class, 'slds-medium-show')])[1]
 *** Test Cases ***
 Select And Authenticate Refresh Environment
-                              Set Library Search Order    QForce           QWeb
-                              Open Browser                about:blank      chrome
+                            #   Set Library Search Order    QForce           QWeb
+                            #   Open Browser                about:blank      chrome
 
     [Documentation]             This test case selects a sandbox environment, handles authentication if needed,applies metadata masking rules, selects users, and creates a refresh template.
     ....It uses Copado Robotic Testing with QVision and QWeb.
     [Tags]                      RefreshFlow
 
     # Step 1: Launch refresh flow in the application
-    #  Appstate                    Home
+      Appstate                    Home
     # Sleep                     10
     # GoTo                      https://test.salesforce.com
     # TypeText                  username                    Vishnu.r@cloudfulcrum.com.refreshqa2
@@ -55,6 +55,7 @@ Select And Authenticate Refresh Environment
     ClickText                   Refresh a Sandbox
     ClickText                   Next
     Selection of Org Retreival
+    ClickElement                xpath=//button[@name="selectMetadata"]
     Metadata Retreival
     Selecting the Masking Type
     Select the Suffix Masking
