@@ -38,10 +38,10 @@ Selection of Org Retreival
         ClickText               ${ENV}
         Sleep                   3s
     END
-    ClickElement                xpath=//button[@name="selectMetadata"]
+    
 Metadata Retreival
     # ClickElement              xpath=//button[@name="selectMetadata"]
-
+    ClickElement                xpath=//button[@name="selectMetadata"]
     FOR                         ${Metadata_Type}            IN                          @{Metadata_Types}
 
         Log To Console          ${Metadata_Type}
