@@ -58,7 +58,7 @@ Select And Authenticate Refresh Environment
     ClickElement                xpath=//button[@name="selectMetadata"]
     Metadata Retreival
     Selecting the Masking Type
-    Select the Suffix Masking
+    Select the Suffix Masking 
     Select the ApexScript
     Selecting the users
     Selecting the Custom Settings
